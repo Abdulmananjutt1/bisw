@@ -1,0 +1,11 @@
+export { AboutCta } from "./AboutCta";
+export { AboutFounderMessage } from "./AboutFounderMessage";
+export { AboutHero } from "./AboutHero";
+export { AboutJourney } from "./AboutJourney";
+export { AboutMission } from "./AboutMission";
+export { AboutPurpose } from "./AboutPurpose";
+export { AboutStory } from "./AboutStory";
+export { AboutTeam } from "./AboutTeam";
+export { AboutValues } from "./AboutValues";
+export { AboutVicePresidentMessage } from "./AboutVicePresidentMessage";
+export { AboutVision } from "./AboutVision";

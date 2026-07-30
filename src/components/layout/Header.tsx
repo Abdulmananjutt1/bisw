@@ -1,0 +1,88 @@
+import { siteConfig } from "@/config/site";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { Navbar } from "@/components/layout/Navbar";
+import { Phone, Mail, MapPin, Heart } from "lucide-react";
+import Link from "next/link";
+
+export function Header() {
+  return (
+    <header className="sticky top-0 z-[100]">
+      {/* Top info bar */}
+      <div className="hidden bg-primary-darker md:block">
+        <Container className="flex items-center justify-between py-2">
+          <div className="flex items-center gap-6">
+            <a
+              href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+              className="flex items-center gap-1.5 text-xs text-white/75 transition-colors hover:text-white"
+            >
+              <Phone className="h-3 w-3 text-primary-light" />
+              {siteConfig.phone}
+            </a>
+            <span className="text-white/20">|</span>
+            <a
+              href={`tel:${siteConfig.phone2.replace(/\s/g, "")}`}
+              className="flex items-center gap-1.5 text-xs text-white/75 transition-colors hover:text-white"
+            >
+              <Phone className="h-3 w-3 text-primary-light" />
+              {siteConfig.phone2}
+            </a>
+            <span className="text-white/20">|</span>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="flex items-center gap-1.5 text-xs text-white/75 transition-colors hover:text-white"
+            >
+              <Mail className="h-3 w-3 text-primary-light" />
+              {siteConfig.email}
+            </a>
+          </div>
+          <div className="flex items-center gap-2 text-xs text-white/55">
+            <MapPin className="h-3 w-3 text-secondary-light" />
+            <span>{siteConfig.addressShort}</span>
+            <span className="text-white/20 mx-1">•</span>
+            <Heart className="h-3 w-3 text-secondary-light" />
+            <span>Est. {siteConfig.established}</span>
+          </div>
+        </Container>
+      </div>
+
+      {/* Main header */}
+      <div className="border-b border-gray-100 bg-white/97 shadow-[0_2px_20px_rgba(0,0,0,0.06)] backdrop-blur-xl">
+        <Container className="relative flex h-18 items-center justify-between py-3 sm:h-20">
+          {/* Logo */}
+          <Link href="/" className="group flex items-center gap-3">
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-primary shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
+              <span className="relative z-10 text-xl font-black text-white">B</span>
+            </div>
+            <div className="leading-none">
+              <span className="block text-lg font-bold text-foreground sm:text-xl">
+                {siteConfig.name}
+              </span>
+              <span className="block text-[10px] font-medium uppercase tracking-widest text-muted sm:text-[11px]">
+                Welfare Society
+              </span>
+            </div>
+          </Link>
+
+          {/* Nav */}
+          <Navbar />
+
+          {/* Right CTA */}
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+              className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-gray-50 hover:text-primary"
+            >
+              <Phone className="h-4 w-4" />
+              <span className="hidden lg:inline">Call Us</span>
+            </a>
+            <Button href="/donate" size="sm" className="rounded-xl shadow-lg shadow-primary/25">
+              <Heart className="h-4 w-4" />
+              Donate Now
+            </Button>
+          </div>
+        </Container>
+      </div>
+    </header>
+  );
+}
