@@ -29,23 +29,23 @@ export function AboutPreview() {
           {/* Image column */}
           <div className="relative">
             {/* Established badge behind */}
-            <div className="absolute -left-4 -top-4 z-0 h-full w-full rounded-[2.5rem] bg-primary/6" />
+            <div className="absolute -left-2 -top-2 z-0 h-full w-full rounded-[2rem] bg-primary/6 sm:-left-4 sm:-top-4 sm:rounded-[2.5rem]" />
 
             {/* Main image */}
-            <div className="relative z-10 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-primary/15">
+            <div className="relative z-10 overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/15 sm:rounded-[2.5rem]">
               <Image
                 src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=90"
                 alt="Dr Amna Amber with girls at BIWS campus"
                 width={800}
                 height={600}
-                className="h-[420px] w-full object-cover"
+                className="h-[360px] w-full object-cover sm:h-[420px]"
                 unoptimized
               />
               <div className="absolute inset-0 bg-primary-darker/20" />
             </div>
 
             {/* Floating quote card */}
-            <div className="absolute -bottom-6 -right-4 z-20 max-w-[240px] rounded-2xl bg-white p-5 shadow-2xl sm:right-4">
+            <div className="relative z-20 mx-3 -mt-14 rounded-2xl bg-white p-4 shadow-2xl sm:absolute sm:-bottom-6 sm:right-4 sm:mx-0 sm:mt-0 sm:max-w-[240px] sm:p-5">
               <Quote className="mb-1 h-7 w-7 text-primary/20" />
               <p className="text-xs leading-relaxed text-muted italic">
                 &ldquo;Every child deserves love, education, dignity, and the opportunity to succeed.&rdquo;
@@ -62,7 +62,7 @@ export function AboutPreview() {
             </div>
 
             {/* Year badge */}
-            <div className="absolute left-4 top-4 z-20 rounded-2xl bg-secondary px-5 py-3 shadow-xl">
+            <div className="absolute left-3 top-3 z-20 rounded-2xl bg-secondary px-4 py-2.5 shadow-xl sm:left-4 sm:top-4 sm:px-5 sm:py-3">
               <p className="text-xs font-semibold text-white/80">Est.</p>
               <p className="text-2xl font-black text-white">
                 {siteConfig.established}
@@ -70,11 +70,11 @@ export function AboutPreview() {
             </div>
 
             {/* Achievement badges */}
-            <div className="absolute -right-4 top-1/2 z-20 -translate-y-1/2 flex flex-col gap-3">
+            <div className="absolute right-3 top-3 z-20 flex flex-col gap-2 sm:-right-4 sm:top-1/2 sm:-translate-y-1/2 sm:gap-3">
               {achievements.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="glass rounded-2xl p-3 text-center shadow-xl">
-                  <Icon className="mx-auto mb-1 h-5 w-5 text-primary" />
-                  <p className="text-xl font-black text-primary">
+                <div key={label} className="glass min-w-[82px] rounded-2xl p-2.5 text-center shadow-xl sm:min-w-0 sm:p-3">
+                  <Icon className="mx-auto mb-1 h-4 w-4 text-primary sm:h-5 sm:w-5" />
+                  <p className="text-lg font-black text-primary sm:text-xl">
                     {value}
                   </p>
                   <p className="text-[10px] font-medium text-muted">{label}</p>

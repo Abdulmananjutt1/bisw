@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function GetInvolvedHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#063f30] py-20 sm:py-28">
+    <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#063f30] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
       <Image
         src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1800&q=85"
         alt="Volunteers preparing support supplies for families"
@@ -18,7 +18,7 @@ export function GetInvolvedHero() {
       />
       <div className="absolute inset-0 bg-[#052d21]/75" />
 
-      <Container className="relative">
+      <Container className="relative flex h-full items-center">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-primary-light backdrop-blur-sm">
             <Users className="h-3.5 w-3.5" />

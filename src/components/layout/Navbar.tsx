@@ -50,7 +50,7 @@ export function Navbar() {
     );
   };
 
-  const renderMobileSimpleLink = (link: (typeof navLinks)[number], index: number) => {
+  const renderMobileSimpleLink = (link: (typeof navLinks)[number]) => {
     const isActive = isActiveLink(link.href);
 
     return (
@@ -59,12 +59,11 @@ export function Navbar() {
           href={link.href}
           onClick={() => setIsOpen(false)}
           className={cn(
-            "flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-semibold transition-all",
+            "flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold transition-all",
             isActive
               ? "bg-primary text-white shadow-md shadow-primary/25"
               : "text-foreground/75 hover:bg-gray-50 hover:text-foreground"
           )}
-          style={{ animationDelay: `${index * 50}ms` }}
         >
           <span>{link.label}</span>
           <ChevronRight className={cn("h-4 w-4", isActive ? "text-white/70" : "text-muted")} />
@@ -92,7 +91,7 @@ export function Navbar() {
 
       {isOpen && (
         <div
-          className="fixed inset-x-0 bottom-0 top-[4.5rem] z-[60] bg-foreground/45 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-[230] bg-foreground/50 backdrop-blur-sm md:hidden"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />
@@ -102,10 +101,11 @@ export function Navbar() {
         <div
           id="mobile-menu"
           role="dialog"
+          aria-modal="true"
           aria-label="Mobile navigation"
-          className="fixed inset-x-4 top-[5.15rem] z-[70] max-h-[calc(100dvh-6rem)] overflow-hidden rounded-2xl border border-white/70 bg-white shadow-2xl shadow-slate-950/25 md:hidden"
+          className="fixed right-0 top-0 z-[240] flex h-dvh w-[calc(100vw-0.75rem)] max-w-[22rem] animate-drawer-in flex-col overflow-hidden border-l border-emerald-100 bg-white shadow-2xl shadow-slate-950/30 md:hidden"
         >
-          <div className="flex items-center justify-between bg-primary-darker p-5">
+          <div className="flex items-center justify-between bg-primary-darker px-4 py-5">
             <div className="flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/20 shadow-inner">
                 <span className="text-base font-black text-white">B</span>
@@ -119,7 +119,7 @@ export function Navbar() {
             </div>
             <button
               type="button"
-              className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white/80 hover:bg-white/20"
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
             >
@@ -127,11 +127,11 @@ export function Navbar() {
             </button>
           </div>
 
-          <ul className="grid max-h-[calc(100dvh-18rem)] gap-1 overflow-y-auto p-4">
-            {navLinks.map((link, index) => renderMobileSimpleLink(link, index))}
+          <ul className="grid flex-1 content-start gap-1 overflow-y-auto p-3">
+            {navLinks.map((link) => renderMobileSimpleLink(link))}
           </ul>
 
-          <div className="space-y-3 border-t border-gray-100 p-4">
+          <div className="mt-auto space-y-3 border-t border-gray-100 p-4">
             <Link
               href="/donate"
               onClick={() => setIsOpen(false)}

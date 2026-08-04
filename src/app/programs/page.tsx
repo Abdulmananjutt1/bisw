@@ -11,7 +11,6 @@ import {
   Users,
   CheckCircle2,
   ArrowRight,
-  Sparkles,
   HandHeart,
   ClipboardCheck,
   BookOpen,
@@ -114,7 +113,7 @@ export default function ProgramsPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative isolate overflow-hidden bg-[#101820] py-16 sm:py-20 lg:py-24">
+      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#101820] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
         {/* Background */}
         <Image
           src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1800&q=85"
@@ -127,15 +126,7 @@ export default function ProgramsPage() {
         />
         <div className="absolute inset-0 bg-[#07120f]/72" />
 
-        <Container className="relative text-center">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 backdrop-blur-sm">
-            <Sparkles className="h-4 w-4 text-secondary-light animate-pulse-soft" />
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary-light">
-              Education, Care & Skills
-            </span>
-          </div>
-
+        <Container className="relative flex h-full flex-col justify-center text-center">
           <h1 className="mt-5 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
             Our <span className="text-secondary-light">Programs</span>
           </h1>

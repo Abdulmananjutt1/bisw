@@ -16,7 +16,8 @@ export function Testimonials() {
     <section className="bg-white py-16 sm:py-20">
       <Container className="max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-primary">
+          <p className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-primary">
+            <Quote className="h-4 w-4" />
             Community Reviews
           </p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">

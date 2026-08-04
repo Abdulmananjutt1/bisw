@@ -1,5 +1,4 @@
 import { siteConfig } from "@/config/site";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Navbar } from "@/components/layout/Navbar";
 import { Phone, Mail, MapPin, Heart } from "lucide-react";
@@ -7,7 +6,7 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-[100]">
+    <header className="sticky top-0 z-[220]">
       {/* Top info bar */}
       <div className="hidden bg-primary-darker md:block">
         <Container className="flex items-center justify-between py-2">
@@ -68,18 +67,25 @@ export function Header() {
           <Navbar />
 
           {/* Right CTA */}
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="relative z-20 hidden pointer-events-auto items-center gap-3 md:flex">
             <a
               href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-              className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-gray-50 hover:text-primary"
+              aria-label={`Call BIWS at ${siteConfig.phone}`}
+              title={`Call ${siteConfig.phone}`}
+              className="pointer-events-auto flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-gray-50 hover:text-primary"
             >
               <Phone className="h-4 w-4" />
               <span className="hidden lg:inline">Call Us</span>
             </a>
-            <Button href="/donate" size="sm" className="rounded-xl shadow-lg shadow-primary/25">
+            <Link
+              href="/donate"
+              aria-label="Donate now"
+              title="Donate Now"
+              className="pointer-events-auto inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-200 hover:bg-primary-dark hover:shadow-primary/30 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
               <Heart className="h-4 w-4" />
               Donate Now
-            </Button>
+            </Link>
           </div>
         </Container>
       </div>

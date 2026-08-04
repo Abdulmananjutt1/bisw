@@ -85,34 +85,36 @@ export function GetInvolved() {
             </p>
 
             {/* Action cards */}
-            <div className="mt-8 space-y-4">
+            <div className="mt-6 grid gap-3">
               {getInvolvedOptions.map((option, i) => {
                 const Icon = iconMap[option.icon];
                 const colors = optionColors[i];
                 return (
-                  <div
+                  <a
                     key={option.id}
-                    className={`group flex items-start gap-5 rounded-2xl border ${colors.border} ${colors.bg} p-5 transition-all duration-300 hover:-translate-x-1 hover:shadow-lg hover:${colors.glow}`}
+                    href={option.href}
+                    className={`group grid grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-xl border ${colors.border} ${colors.bg} px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:${colors.glow} sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center`}
                   >
                     <div
-                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${colors.icon} shadow-md`}
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${colors.icon} shadow-md`}
                     >
-                      <Icon className="h-6 w-6 text-white" />
+                      <Icon className="h-5 w-5 text-white" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-bold text-foreground">{option.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-muted">
+                    <div className="min-w-0">
+                      <h3 className="text-sm font-bold text-foreground sm:text-[15px]">
+                        {option.title}
+                      </h3>
+                      <p className="mt-0.5 text-xs leading-snug text-muted sm:text-[13px]">
                         {option.description}
                       </p>
                     </div>
-                    <a
-                      href={option.href}
-                      className={`flex shrink-0 items-center gap-1 text-sm font-bold ${colors.accent} transition-all group-hover:gap-2`}
+                    <span
+                      className={`col-start-2 inline-flex shrink-0 items-center gap-1 text-xs font-bold ${colors.accent} transition-all group-hover:gap-2 sm:col-start-auto`}
                     >
                       {option.cta}
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
-                  </div>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </a>
                 );
               })}
             </div>
@@ -143,7 +145,7 @@ export function GetInvolved() {
           <div className="flex flex-col gap-7">
 
             {/* Become a Partner card */}
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-900 p-7 text-white shadow-2xl shadow-slate-300/50">
+            <div className="relative overflow-hidden rounded-[2rem] border border-emerald-200 bg-primary-darker p-7 text-white shadow-2xl shadow-emerald-300/40">
               {/* Decorative rings */}
               <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/5" />
               <div className="pointer-events-none absolute -bottom-8 -left-8 h-28 w-28 rounded-full bg-secondary/10" />

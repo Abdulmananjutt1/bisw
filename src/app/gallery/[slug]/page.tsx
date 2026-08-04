@@ -62,7 +62,7 @@ export default async function GalleryDetailPage({
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-[#052d21] py-20 sm:py-28">
+      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#052d21] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
         <Image
           src={item.image}
           alt={item.title}
@@ -74,7 +74,7 @@ export default async function GalleryDetailPage({
         />
         <div className="absolute inset-0 bg-[#052d21]/75" />
 
-        <Container className="relative">
+        <Container className="relative flex h-full flex-col justify-center">
           <Link
             href="/gallery"
             className="inline-flex items-center gap-2 text-sm font-bold text-white/75 transition-colors hover:text-white"

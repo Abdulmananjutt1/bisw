@@ -1,16 +1,16 @@
-import { programs } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { programs } from "@/config/site";
 import {
-  Home,
+  ArrowRight,
+  CheckCircle2,
   GraduationCap,
-  Laptop,
   HeartPulse,
+  Home,
+  Laptop,
   Shield,
   Users,
   type LucideIcon,
-  ArrowRight,
-  Star,
 } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -22,126 +22,94 @@ const iconMap: Record<string, LucideIcon> = {
   Users,
 };
 
-const colorSchemes: Record<
-  string,
-  {
-    iconBg: string;
-    accentBg: string;
-    softBg: string;
-    textColor: string;
-    ringColor: string;
-  }
-> = {
-  teal:   { iconBg: "bg-teal-500",   accentBg: "bg-teal-500",   softBg: "bg-teal-50",   textColor: "text-teal-600",   ringColor: "ring-teal-200" },
-  blue:   { iconBg: "bg-blue-500",   accentBg: "bg-blue-500",   softBg: "bg-blue-50",   textColor: "text-blue-600",   ringColor: "ring-blue-200" },
-  purple: { iconBg: "bg-purple-500", accentBg: "bg-purple-500", softBg: "bg-purple-50", textColor: "text-purple-600", ringColor: "ring-purple-200" },
-  rose:   { iconBg: "bg-rose-500",   accentBg: "bg-rose-500",   softBg: "bg-rose-50",   textColor: "text-rose-600",   ringColor: "ring-rose-200" },
-  green:  { iconBg: "bg-green-600",  accentBg: "bg-green-600",  softBg: "bg-green-50",  textColor: "text-green-600",  ringColor: "ring-green-200" },
-  amber:  { iconBg: "bg-primary",    accentBg: "bg-primary",    softBg: "bg-emerald-50", textColor: "text-primary",    ringColor: "ring-emerald-200" },
-};
+const careModel = [
+  "Safe residential care and daily essentials",
+  "Schooling, tutoring, and wellbeing support",
+  "Practical skills for confidence and independence",
+];
 
 export function ProgramsPreview() {
   return (
-    <section className="relative overflow-hidden py-24 sm:py-32">
-      {/* ── Background ── */}
-      <div className="absolute inset-0 bg-[#f8fafc]" />
-      <div className="absolute inset-0 pattern-grid opacity-30" />
-
-      {/* Ambient blobs — indigo/violet, NOT green */}
-      <div className="pointer-events-none absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-white blur-3xl" />
-      <div className="pointer-events-none absolute -right-40 bottom-20 h-[400px] w-[400px] rounded-full bg-slate-200/70 blur-3xl" />
-
-      <Container className="relative">
-        {/* ── Header ── */}
-        <div className="mb-16 text-center">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-5 py-2 shadow-sm">
-            <Star className="h-3.5 w-3.5 fill-indigo-500 text-indigo-500" />
-            <span className="text-sm font-bold uppercase tracking-widest text-indigo-600">
-              Our Programs
-            </span>
-            <Star className="h-3.5 w-3.5 fill-indigo-500 text-indigo-500" />
-          </div>
-
-          <h2 className="mt-5 text-4xl font-extrabold leading-tight text-foreground sm:text-5xl lg:text-[3.25rem]">
-            Comprehensive Care &{" "}
-            <span className="text-primary">Skill Building</span>
+    <section className="relative overflow-hidden bg-[#f7fbf8] py-16 sm:py-24">
+      <Container>
+        <div className="max-w-3xl">
+          <p className="inline-flex items-center rounded-full border border-primary/15 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-sm">
+            Our Programs
+          </p>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+            Care, education, and skills in one steady path.
           </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-            Every program at BIWS is designed to nurture the whole child —
-            her body, mind, skills, and future.
-          </p>
         </div>
 
-        {/* ── Program cards ── */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {programs.map((program, i) => {
-            const Icon = iconMap[program.icon];
-            const c = colorSchemes[program.color];
+        <div className="mt-12 grid gap-5 lg:grid-cols-[0.82fr_1.18fr]">
+          <article className="flex min-h-[520px] flex-col justify-between overflow-hidden rounded-[1.75rem] bg-primary-darker p-7 text-white shadow-xl shadow-emerald-950/15 sm:p-8">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-primary-lighter/80">
+                Complete care model
+              </p>
+              <h3 className="mt-4 text-3xl font-extrabold leading-tight">
+                One campus, many layers of support.
+              </h3>
+              <p className="mt-4 leading-relaxed text-white/70">
+                BIWS programs work together so every girl receives protection,
+                education, health support, and practical skills without losing
+                the comfort of a home-like routine.
+              </p>
 
-            return (
-              <div
-                key={program.id}
-                className="group relative overflow-hidden rounded-3xl bg-white p-7 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                style={{
-                  boxShadow: `0 4px 20px -4px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)`,
-                }}
-              >
-                {/* Large faded number */}
-                <span
-                  className={`pointer-events-none absolute -right-2 -top-3 select-none text-8xl font-black ${c.textColor} opacity-[0.04]`}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
-                {/* Icon circle */}
-                <div className="relative mb-6">
-                  <div
-                    className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl ${c.iconBg} shadow-lg ring-4 ${c.ringColor}`}
-                  >
-                    <Icon className="h-8 w-8 text-white drop-shadow" />
+              <div className="mt-7 space-y-3">
+                {careModel.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-secondary-light" />
+                    <p className="text-sm font-semibold leading-relaxed text-white/85">
+                      {item}
+                    </p>
                   </div>
-                  {/* Subtle glow dot */}
-                  <span
-                    className={`absolute -bottom-1 left-6 h-3 w-3 rounded-full blur-sm opacity-70 ${c.accentBg}`}
-                  />
-                </div>
-
-                {/* Text */}
-                <h3 className="text-xl font-extrabold text-foreground">
-                  {program.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {program.description}
-                </p>
-
-                {/* Hover CTA row */}
-                <div
-                  className={`mt-5 flex items-center gap-1.5 text-sm font-bold ${c.textColor} translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100`}
-                >
-                  Learn more
-                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </div>
-
-                {/* Bottom accent line — replaces the old top line */}
-                <div
-                  className={`absolute bottom-0 left-6 right-6 h-0.5 rounded-full ${c.accentBg} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
-                />
+                ))}
               </div>
-            );
-          })}
-        </div>
+            </div>
 
-        {/* ── Bottom CTA ── */}
-        <div className="mt-16 flex flex-col items-center gap-4">
-          <Button href="/programs" size="lg" className="rounded-2xl px-8 shadow-lg shadow-indigo-500/20">
-            Explore All Programs
-            <ArrowRight className="h-5 w-5" />
-          </Button>
-          <p className="text-sm text-muted">
-            6 structured programs · 90 girls served · Est. 2013
-          </p>
+            <Button
+              href="/programs"
+              size="lg"
+              className="mt-8 w-full justify-center bg-secondary text-white shadow-secondary/25 hover:bg-secondary-dark"
+            >
+              Explore All Programs
+              <ArrowRight className="h-5 w-5" />
+            </Button>
+          </article>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {programs.map((program, i) => {
+              const Icon = iconMap[program.icon] ?? Home;
+
+              return (
+                <article
+                  key={program.id}
+                  className="group relative min-h-[220px] overflow-hidden rounded-[1.5rem] border border-emerald-100 bg-white p-5 shadow-sm shadow-emerald-950/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-xl hover:shadow-emerald-950/10"
+                >
+                  <span className="pointer-events-none absolute right-4 top-4 rounded-2xl bg-emerald-50 px-3 py-1 text-4xl font-black leading-none text-primary/15 transition-colors group-hover:text-primary/28">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <Icon className="h-6 w-6" />
+                  </div>
+
+                  <h3 className="mt-5 pr-16 text-lg font-extrabold leading-snug text-foreground">
+                    {program.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    {program.description}
+                  </p>
+
+                  <div
+                    className="absolute bottom-0 left-5 right-5 h-0.5 rounded-full bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
+                </article>
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>

@@ -64,6 +64,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a[href],
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }
@@ -112,6 +118,10 @@ body {
   from { width: 0%; }
   to   { width: var(--target-width); }
 }
+@keyframes drawerInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
 
 .animate-fade-in-up    { animation: fadeInUp 0.7s ease-out forwards; }
 .animate-fade-in-left  { animation: fadeInLeft 0.7s ease-out forwards; }
@@ -121,6 +131,7 @@ body {
 .animate-pulse-soft    { animation: pulseSoft 3s ease-in-out infinite; }
 .animate-float         { animation: float 4s ease-in-out infinite; }
 .animate-spin-slow     { animation: spinSlow 12s linear infinite; }
+.animate-drawer-in     { animation: drawerInRight 0.28s ease-out forwards; }
 
 /* ─── Glass Card ─── */
 .glass {

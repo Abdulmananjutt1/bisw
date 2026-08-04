@@ -4,13 +4,6 @@ import { Container } from "@/components/ui/Container";
 import { ArrowRight, Heart, ChevronDown, Star } from "lucide-react";
 import Image from "next/image";
 
-const donateOptions = [
-  { label: "Zakat", href: "/donate?type=zakat" },
-  { label: "Education", href: "/donate?type=education" },
-  { label: "Sponsorship", href: "/donate?type=sponsorship" },
-  { label: "General", href: "/donate?type=general" },
-];
-
 export function Hero() {
   return (
     <section className="relative flex min-h-[82vh] items-start overflow-hidden bg-[#021a12]">
@@ -59,11 +52,9 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
-              BIWS Girls Campus provides{" "}
-              <span className="font-semibold text-white">shelter, food, quality education,</span>{" "}
-              emotional support, and life skills to{" "}
-              <span className="font-semibold text-secondary-light">90 orphan girls</span> in
-              Lahore — transforming lives since 2013.
+              Since 2013, BIWS has provided{" "}
+              <span className="font-semibold text-white">safe care and education</span> for{" "}
+              <span className="font-semibold text-secondary-light">90 orphan girls</span> in Lahore.
             </p>
 
             {/* Stars */}
@@ -97,23 +88,6 @@ export function Hero() {
               </Button>
             </div>
 
-            {/* Quick donation pills */}
-            <div className="mt-6">
-              <p className="mb-2 text-xs font-medium uppercase tracking-wider text-white/40">
-                Quick Donation
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {donateOptions.map((opt) => (
-                  <a
-                    key={opt.label}
-                    href={opt.href}
-                    className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm transition-all hover:border-secondary/50 hover:bg-secondary/20 hover:text-white"
-                  >
-                    {opt.label}
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </Container>

@@ -40,17 +40,12 @@ export function VisitSection() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            <p className="inline-flex items-center rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary">
               Plan a visit
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Schedule your campus visit with care.
             </h2>
-            <p className="mt-4 leading-relaxed text-muted">
-              A planned visit helps our team prepare properly and keeps the
-              campus routine comfortable for the girls. Please contact us before
-              coming to BIWS.
-            </p>
 
             <div className="mt-8 space-y-4">
               {visitDetails.map(({ title, text, icon: Icon }) => (

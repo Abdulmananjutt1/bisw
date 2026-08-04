@@ -129,9 +129,9 @@ function ContributionCard({
 }: ContributionCardData) {
   return (
     <article
-      className={`group flex min-h-[462px] flex-col overflow-hidden rounded-2xl border bg-white text-center shadow-[0_18px_55px_-43px_rgba(15,25,35,0.72)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_-48px_rgba(15,25,35,0.78)] ${tone.border}`}
+      className={`group flex min-h-[462px] flex-col overflow-hidden rounded-2xl border bg-white/95 text-center shadow-[0_18px_55px_-43px_rgba(6,78,59,0.72)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_-48px_rgba(6,78,59,0.78)] ${tone.border}`}
     >
-      <div className="relative h-[202px] overflow-hidden bg-slate-100">
+      <div className="relative h-[202px] overflow-hidden bg-emerald-100">
         <Image
           src={image}
           alt={title}
@@ -180,10 +180,10 @@ function ContributionCard({
 
 export function FeaturedCauses() {
   return (
-    <section className="bg-[#f8fafc] py-16 sm:py-24">
+    <section className="bg-[#eef8f3] py-16 sm:py-24">
       <Container className="max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-primary shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/90 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-primary shadow-sm">
             <HeartHandshake className="h-4 w-4 text-primary" />
             Featured Causes
           </span>

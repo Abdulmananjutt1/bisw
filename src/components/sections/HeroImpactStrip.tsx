@@ -70,7 +70,7 @@ export function HeroImpactStrip() {
               ))}
             </div>
 
-            <div className="relative overflow-hidden bg-slate-900 px-6 py-6 text-white sm:px-8">
+            <div className="relative overflow-hidden bg-primary-darker px-6 py-6 text-white sm:px-8">
               <div className="pointer-events-none absolute -right-12 -top-16 h-44 w-44 rounded-full border border-white/10" />
               <div className="pointer-events-none absolute -right-4 top-4 h-28 w-28 rounded-full border border-secondary/20" />
 

@@ -12,13 +12,13 @@ const donationAmounts = [
 
 export function CallToAction() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-[#eef8f3] py-20 sm:py-28">
       <Container>
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.25)]">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-primary-darker shadow-[0_30px_80px_rgba(6,78,59,0.28)]">
           {/* Background decoration */}
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/5 blur-2xl" />
-            <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-secondary/15 blur-2xl" />
+            <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-primary/25 blur-2xl" />
             <div className="absolute left-1/2 top-0 h-px w-96 -translate-x-1/2 bg-white/20" />
           </div>
 
@@ -48,7 +48,7 @@ export function CallToAction() {
                   <a
                     key={amt.label}
                     href="/donate"
-                    className="group rounded-2xl border border-white/20 bg-white/10 p-3 text-center backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/20"
+                    className="group rounded-2xl border border-emerald-100/20 bg-primary/20 p-3 text-center backdrop-blur-sm transition-all hover:border-emerald-100/40 hover:bg-primary/30"
                   >
                     <p className="text-base font-black text-white">{amt.label}</p>
                     <p className="mt-0.5 text-[11px] text-white/55 group-hover:text-white/70">
@@ -82,7 +82,7 @@ export function CallToAction() {
 
             {/* Right — contact card */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-sm rounded-3xl border border-white/15 bg-white/10 p-8 backdrop-blur-sm">
+              <div className="w-full max-w-sm rounded-3xl border border-emerald-100/20 bg-primary/20 p-8 backdrop-blur-sm">
                 <h3 className="text-xl font-bold text-white">
                   Contact Us Directly
                 </h3>
@@ -93,7 +93,7 @@ export function CallToAction() {
                 <div className="mt-6 space-y-4">
                   <a
                     href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                    className="flex items-center gap-4 rounded-2xl border border-white/15 bg-white/10 p-4 transition-all hover:bg-white/15"
+                    className="flex items-center gap-4 rounded-2xl border border-emerald-100/20 bg-primary/20 p-4 transition-all hover:bg-primary/30"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/30 shadow-inner">
                       <Phone className="h-5 w-5 text-white" />
@@ -106,7 +106,7 @@ export function CallToAction() {
 
                   <a
                     href={`tel:${siteConfig.phone2.replace(/\s/g, "")}`}
-                    className="flex items-center gap-4 rounded-2xl border border-white/15 bg-white/10 p-4 transition-all hover:bg-white/15"
+                    className="flex items-center gap-4 rounded-2xl border border-emerald-100/20 bg-primary/20 p-4 transition-all hover:bg-primary/30"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/30 shadow-inner">
                       <Phone className="h-5 w-5 text-white" />
@@ -118,7 +118,7 @@ export function CallToAction() {
                   </a>
                 </div>
 
-                <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                <div className="mt-6 rounded-2xl border border-emerald-100/15 bg-primary/15 p-4 text-center">
                   <p className="text-xs font-semibold uppercase tracking-wider text-white/50">
                     Bank Account
                   </p>

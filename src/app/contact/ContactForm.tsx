@@ -81,7 +81,7 @@ export function ContactForm() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-[#063f30] py-16 sm:py-24">
+      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#063f30] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-45"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=88')", backgroundPosition: "right center" }}
@@ -90,7 +90,7 @@ export function ContactForm() {
         <div className="absolute inset-0 bg-[#052d21]/75" />
         <div className="absolute inset-0 opacity-15 pattern-grid" />
         <div className="absolute -bottom-24 -right-20 h-72 w-72 rounded-full border-[28px] border-white/5" />
-        <Container className="relative">
+        <Container className="relative flex h-full items-center">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-primary-light backdrop-blur-sm">
               <Sparkles className="h-3.5 w-3.5" />

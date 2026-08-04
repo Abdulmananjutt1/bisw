@@ -2,18 +2,21 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function useCountUp(
+export function useCountUp<T extends HTMLElement = HTMLDivElement>(
   targetValue: string,
   duration = 2000,
   startOnView = true
 ) {
   const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<T>(null);
   const hasAnimated = useRef(false);
 
   const numericTarget = parseInt(targetValue.replace(/[^0-9]/g, ""), 10) || 0;
 
   useEffect(() => {
+    hasAnimated.current = false;
+    setCount(0);
+
     if (!startOnView) {
       animateCount(numericTarget);
       return;

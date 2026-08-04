@@ -64,7 +64,7 @@ export function AboutJourney() {
               long-term support for orphan girls.
             </p>
 
-            <div className="mt-8 rounded-[1.5rem] bg-slate-950 p-6 text-white shadow-sm">
+            <div className="mt-8 rounded-[1.5rem] border border-emerald-200 bg-primary-darker p-6 text-white shadow-lg shadow-emerald-900/15">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary-light">
                 Journey at a glance
               </p>
@@ -74,7 +74,7 @@ export function AboutJourney() {
                   { value: "90", label: "girls" },
                   { value: "5+", label: "programs" },
                 ].map((item) => (
-                  <div key={item.label} className="rounded-2xl border border-white/10 bg-white/8 p-4 text-center">
+                  <div key={item.label} className="rounded-2xl border border-emerald-100/20 bg-primary/20 p-4 text-center">
                     <p className="text-xl font-black text-white">{item.value}</p>
                     <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-white/55">
                       {item.label}

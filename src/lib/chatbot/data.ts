@@ -1,6 +1,6 @@
 /**
  * BIWS Chatbot Knowledge Base
- * Static Q&A data — replace with dynamic/AI source when ready.
+ * Static Q&A data for quick keyword-based assistance.
  */
 
 export type QuickReply = {
@@ -18,12 +18,10 @@ export type BotMessage = {
 };
 
 export type KnowledgeEntry = {
-  /** Keywords / phrases to match against (lowercase) */
+  /** Keywords / phrases to match against */
   triggers: string[];
   response: BotMessage;
 };
-
-// ─── Quick reply sets ──────────────────────────────────────────────────────────
 
 const mainMenuReplies: QuickReply[] = [
   { label: "About BIWS", value: "tell me about biws" },
@@ -37,180 +35,394 @@ const donateReplies: QuickReply[] = [
   { label: "Bank Details", value: "bank account details" },
   { label: "Zakat", value: "can i give zakat" },
   { label: "Sponsor a Child", value: "sponsor a child" },
+  { label: "Receipt", value: "donation receipt confirmation" },
   { label: "Back to Menu", value: "main menu" },
 ];
 
 const programReplies: QuickReply[] = [
+  { label: "Orphan Care", value: "orphan care and daily essentials" },
   { label: "Education", value: "girls education program" },
   { label: "Skill Training", value: "skill training programs" },
   { label: "Health", value: "health and wellbeing" },
   { label: "Back to Menu", value: "main menu" },
 ];
 
-// ─── Knowledge base ────────────────────────────────────────────────────────────
-
 export const knowledgeBase: KnowledgeEntry[] = [
-  // ── Greetings ────────────────────────────────────────────────────────────────
   {
-    triggers: ["hi", "hello", "salam", "assalam", "hey", "helo", "start", "help"],
+    triggers: [
+      "hi",
+      "hello",
+      "salam",
+      "assalam",
+      "assalam o alaikum",
+      "aoa",
+      "hey",
+      "helo",
+      "start",
+      "help",
+    ],
     response: {
-      text: "Assalam o Alaikum! 👋 Welcome to **BIWS — Begum Inayat Welfare Society**.\n\nI'm here to help you learn about our work, programs, and how you can support 90 orphan girls in Lahore. What would you like to know?",
+      text: "Assalam o Alaikum! Welcome to **BIWS - Begum Inayat Welfare Society**.\n\nI can help you learn about our work, programs, donations, admission, visits, and contact details. What would you like to know?",
       quickReplies: mainMenuReplies,
     },
   },
-
-  // ── Main menu ────────────────────────────────────────────────────────────────
   {
-    triggers: ["main menu", "menu", "options", "what can you do", "help me"],
+    triggers: [
+      "main menu",
+      "menu",
+      "options",
+      "what can you do",
+      "help me",
+      "madad",
+      "guide me",
+      "kya kar sakte ho",
+    ],
     response: {
-      text: "Here's what I can help you with today:",
+      text: "Here are the main things I can help you with:",
       quickReplies: mainMenuReplies,
     },
   },
-
-  // ── About BIWS ───────────────────────────────────────────────────────────────
   {
-    triggers: ["about biws", "about begum inayat", "what is biws", "who are you", "organization", "tell me about"],
+    triggers: [
+      "about biws",
+      "about begum inayat",
+      "what is biws",
+      "who are you",
+      "organization",
+      "tell me about",
+      "biws kya hai",
+      "biws ke bare mein",
+      "begum inayat kya hai",
+      "orphanage",
+      "girls campus",
+      "mission",
+      "vision",
+      "ngo",
+    ],
     response: {
-      text: "**Begum Inayat Welfare Society of Pakistan (BIWS)** is a registered NGO founded in **2013** by **Dr. Amna Amber**.\n\nWe provide shelter, food, education, health care, and skill development to **90 orphan girls** at our campus in **Model Town, Lahore**.\n\nOur mission is to empower every girl with the tools she needs for a dignified, self-reliant future.",
+      text: "**Begum Inayat Welfare Society of Pakistan (BIWS)** is a registered NGO founded in **2013** by **Dr. Amna Amber**.\n\nBIWS provides shelter, food, education, health support, emotional care, and life skills to **90 orphan girls** at its Girls Campus in **Model Town, Lahore**.",
       quickReplies: mainMenuReplies,
       action: { label: "Learn More", href: "/about" },
     },
   },
-
-  // ── Founder ──────────────────────────────────────────────────────────────────
   {
-    triggers: ["founder", "dr amna", "amna amber", "who founded", "who started"],
+    triggers: [
+      "founder",
+      "dr amna",
+      "amna amber",
+      "who founded",
+      "who started",
+      "kis ne start",
+      "kis ne banaya",
+      "founder kon",
+      "doctor amna",
+    ],
     response: {
-      text: "BIWS was founded by **Dr. Amna Amber** — a visionary leader dedicated to uplifting orphan girls in Pakistan.\n\nUnder her leadership since 2013, BIWS has grown into a full-care campus serving 90 girls with education, health, and skill development.",
+      text: "BIWS was founded by **Dr. Amna Amber** in **2013**. Her vision is to provide orphan girls with safety, education, care, and practical skills for a dignified future.",
       quickReplies: mainMenuReplies,
       action: { label: "Founder's Message", href: "/about#founder" },
     },
   },
-
-  // ── Programs overview ────────────────────────────────────────────────────────
   {
-    triggers: ["programs", "what programs", "services", "what do you offer", "activities"],
+    triggers: [
+      "program",
+      "programs",
+      "what programs",
+      "services",
+      "what services",
+      "what do you offer",
+      "activities",
+      "kya programs hain",
+      "programs kya hain",
+      "program batao",
+      "services kya hain",
+      "care programs",
+      "courses",
+      "classes",
+    ],
     response: {
-      text: "We run **6 core programs** for our girls:\n\n• 🏠 **Orphan Care** — shelter, meals & daily essentials\n• 📚 **Girls Education** — schooling & academic support\n• 💻 **Skill Training** — computer, beautician, stitching, IT\n• ❤️ **Health & Wellbeing** — checkups & nutrition\n• 🛡️ **Safe Environment** — secure, loving campus\n• 🎉 **Community Events** — celebrations & activities",
+      text: "BIWS runs **6 core programs** for the girls:\n\n- **Orphan Care:** shelter, meals, clothing, and daily essentials\n- **Girls Education:** schooling, tutoring, books, and uniforms\n- **Skill Training:** computer, IT, stitching, beautician, and life skills\n- **Health & Wellbeing:** checkups, nutrition, and emotional support\n- **Safe Environment:** secure and caring residential campus\n- **Community Events:** celebrations, activities, and confidence-building",
       quickReplies: programReplies,
       action: { label: "View All Programs", href: "/programs" },
     },
   },
-
-  // ── Education ────────────────────────────────────────────────────────────────
   {
-    triggers: ["education", "school", "study", "learning", "girls education program", "academic"],
+    triggers: [
+      "orphan care",
+      "daily care",
+      "shelter",
+      "food",
+      "meals",
+      "clothing",
+      "essentials",
+      "residential care",
+      "safe home",
+      "khana",
+      "rehna",
+      "kapray",
+      "bachiyon ki care",
+    ],
     response: {
-      text: "📚 **Girls Education Program**\n\nEvery girl at BIWS receives quality schooling, daily tutoring sessions, and full academic support — ensuring a strong educational foundation regardless of background.\n\nWe believe education is the most powerful tool for change.",
+      text: "**Orphan Care & Daily Essentials**\n\nBIWS provides a safe home-like campus for 90 orphan girls in Lahore. Daily support includes meals, clothing, hygiene essentials, emotional care, education routines, and a secure environment where every girl is treated with dignity.",
       quickReplies: programReplies,
-      action: { label: "All Programs", href: "/programs" },
+      action: { label: "Support Care", href: "/donate" },
     },
   },
-
-  // ── Skill training ───────────────────────────────────────────────────────────
   {
-    triggers: ["skill", "training", "computer", "beautician", "stitching", "vocational", "it training", "digital"],
+    triggers: [
+      "education",
+      "school",
+      "study",
+      "learning",
+      "girls education program",
+      "academic",
+      "parhai",
+      "taleem",
+      "school fees",
+      "books",
+      "uniform",
+      "tuition",
+      "tutoring",
+      "educate a child",
+    ],
     response: {
-      text: "💻 **Skill Training Programs**\n\nWe offer hands-on vocational training in:\n\n• Computer & Digital Skills\n• Web & IT Basics\n• Beautician Training\n• Stitching & Tailoring\n\nThese programs prepare older girls for financial independence and careers.",
+      text: "**Girls Education Program**\n\nBIWS supports each girl's education through schooling, tutoring, books, uniforms, and academic guidance. Donations for education help girls continue learning with confidence and dignity.",
       quickReplies: programReplies,
-      action: { label: "Programs", href: "/programs" },
+      action: { label: "Support Education", href: "/donate?type=education" },
     },
   },
-
-  // ── Health ───────────────────────────────────────────────────────────────────
   {
-    triggers: ["health", "wellbeing", "medical", "checkup", "nutrition", "health and wellbeing"],
+    triggers: [
+      "skill",
+      "skills",
+      "training",
+      "computer",
+      "beautician",
+      "stitching",
+      "vocational",
+      "it training",
+      "digital",
+      "computer course",
+      "it course",
+      "silai",
+      "beauty",
+      "hunarmand",
+      "future skills",
+    ],
     response: {
-      text: "❤️ **Health & Wellbeing**\n\nAll girls receive:\n\n• Regular medical checkups\n• Nutritional meals & supplements\n• Mental wellness support\n• Safe, hygienic living conditions\n\nThe physical and emotional health of every child is our priority.",
+      text: "**Skill Training Programs**\n\nBIWS offers practical training in computer skills, IT basics, stitching, beautician work, and life skills. These programs help older girls build confidence and prepare for self-reliance.",
       quickReplies: programReplies,
+      action: { label: "View Programs", href: "/programs" },
     },
   },
-
-  // ── How to donate ────────────────────────────────────────────────────────────
   {
-    triggers: ["donate", "donation", "how to donate", "contribute", "give", "support", "fund", "help financially"],
+    triggers: [
+      "health",
+      "wellbeing",
+      "medical",
+      "checkup",
+      "nutrition",
+      "health and wellbeing",
+      "doctor",
+      "medicine",
+      "mental health",
+      "emotional support",
+      "wellness",
+    ],
     response: {
-      text: "💚 **Donate to BIWS**\n\nYou can support our girls through:\n\n• **Zakat** — your Zakat reaches verified orphans\n• **Sadaqah** — general voluntary donation\n• **Child Sponsorship** — sponsor one girl monthly\n• **Education Support** — fund books, uniforms & supplies\n\nAll donations come with receipts and full transparency.",
+      text: "**Health & Wellbeing**\n\nThe girls receive medical checkups, nutrition support, emotional care, and a clean living environment. BIWS focuses on both physical health and emotional comfort.",
+      quickReplies: programReplies,
+      action: { label: "Support Health", href: "/donate" },
+    },
+  },
+  {
+    triggers: [
+      "donate",
+      "donation",
+      "donations",
+      "how to donate",
+      "contribute",
+      "give",
+      "support",
+      "fund",
+      "help financially",
+      "donate kaise",
+      "donation kaise",
+      "donation karni",
+      "donation krni",
+      "donation karna",
+      "donation deni",
+      "madad karni",
+      "madad karna",
+      "paise donate",
+      "paisa donate",
+      "paise dena",
+      "online donation",
+      "cash donation",
+      "help girls",
+      "support girls",
+    ],
+    response: {
+      text: "**How to Donate**\n\nYou can support BIWS through Zakat, Sadaqah, child sponsorship, education support, food support, or general donation.\n\nYou can donate through bank transfer and then share your payment confirmation with the BIWS team for acknowledgement.",
       quickReplies: donateReplies,
       action: { label: "Donate Now", href: "/donate" },
     },
   },
-
-  // ── Bank details ─────────────────────────────────────────────────────────────
   {
-    triggers: ["bank", "account", "bank details", "transfer", "bank account details", "iban", "faysal"],
+    triggers: [
+      "bank",
+      "account",
+      "bank details",
+      "transfer",
+      "bank account details",
+      "iban",
+      "faysal",
+      "account number",
+      "bank info",
+      "payment",
+      "pay",
+      "send money",
+      "transaction",
+      "payment details",
+    ],
     response: {
-      text: "🏦 **Bank Transfer Details**\n\n**Bank:** Faysal Bank Ltd\n**Account Name:** Begum Inayat Welfare Society of Pakistan\n**Account No:** 0130006000000316\n**IBAN:** PK94FAYS0130006000000316\n**Branch:** Nw Garden Town, Lahore (0130)\n\nPlease share your payment screenshot via WhatsApp or email after transfer.",
+      text: "**Bank Transfer Details**\n\n**Bank:** Faysal Bank Ltd\n**Account Name:** Begum Inayat Welfare Society of Pakistan\n**Account No:** 0130006000000316\n**IBAN:** PK94FAYS0130006000000316\n**Branch:** Nw Garden Town, Lahore (0130)\n\nAfter transfer, please share your payment screenshot with the BIWS team.",
       quickReplies: donateReplies,
     },
   },
-
-  // ── Zakat ────────────────────────────────────────────────────────────────────
   {
-    triggers: ["zakat", "zakat eligible", "can i give zakat"],
+    triggers: [
+      "receipt",
+      "donation receipt",
+      "confirmation",
+      "confirm donation",
+      "payment screenshot",
+      "transaction screenshot",
+      "donation confirmation",
+      "screenshot bhejna",
+      "receipt chahiye",
+    ],
     response: {
-      text: "✅ **Yes, your Zakat is accepted at BIWS.**\n\nAll 90 girls in our care are verified orphans eligible for Zakat. Your Zakat directly funds:\n\n• Daily meals & essentials\n• Education & school supplies\n• Healthcare needs\n\nYou will receive an official receipt for your records.",
+      text: "**Donation Confirmation**\n\nAfter sending your donation, please share your transaction screenshot or payment details with the BIWS team. We will verify it and guide you about the official receipt.\n\nYou can call or message **0300 4492946** or email **info@beguminayat.com**.",
       quickReplies: donateReplies,
-      action: { label: "Donate Zakat", href: "/donate" },
+      action: { label: "Contact Donation Team", href: "/contact" },
     },
   },
-
-  // ── Child sponsorship ────────────────────────────────────────────────────────
   {
-    triggers: ["sponsor", "child sponsorship", "sponsor a child", "monthly sponsor"],
+    triggers: [
+      "zakat",
+      "zakaat",
+      "zakat eligible",
+      "can i give zakat",
+      "sadqa",
+      "sadaqah",
+      "sadaqa",
+      "fitrana",
+      "zakat deni",
+      "zakat donate",
+    ],
     response: {
-      text: "🤝 **Sponsor a Child**\n\nBecome a monthly sponsor and directly change a girl's life. Your sponsorship covers:\n\n• Monthly food & essentials\n• School fees & supplies\n• Healthcare\n\nYou'll receive updates on your sponsored child's progress.",
+      text: "**Zakat & Sadaqah**\n\nYes, BIWS accepts Zakat and Sadaqah. Your support helps provide food, education, healthcare, clothing, and daily care for orphan girls in need.\n\nFor transfer details, choose Bank Details or visit the Donate page.",
       quickReplies: donateReplies,
-      action: { label: "Sponsor Now", href: "/donate" },
+      action: { label: "Donate Zakat", href: "/donate?type=zakat" },
     },
   },
-
-  // ── Admission ────────────────────────────────────────────────────────────────
   {
-    triggers: ["admission", "apply", "enroll", "how to apply", "join", "how to apply for admission"],
+    triggers: [
+      "sponsor",
+      "sponsorship",
+      "child sponsorship",
+      "sponsor a child",
+      "monthly sponsor",
+      "monthly sponsorship",
+      "sponsor child",
+      "sponsor bachi",
+      "bachi sponsor",
+      "monthly care",
+      "monthly donation",
+    ],
     response: {
-      text: "📋 **Girls Admission**\n\nWe accept admission requests for orphan girls in need of care, shelter, and education.\n\nTo apply:\n1. Fill out the contact form on our website\n2. Select **\"Admission Request\"** as your reason\n3. Our team will review and respond within a few days",
+      text: "**Sponsor a Child**\n\nMonthly sponsorship helps provide steady care for one girl's journey, including meals, education, healthcare, clothing, and daily essentials.\n\nBIWS can guide you with sponsorship details and donation confirmation.",
+      quickReplies: donateReplies,
+      action: { label: "Sponsor Now", href: "/donate?type=sponsorship" },
+    },
+  },
+  {
+    triggers: [
+      "admission",
+      "apply",
+      "enroll",
+      "how to apply",
+      "join",
+      "how to apply for admission",
+      "admission process",
+      "admission kaise",
+      "admission ka tarika",
+      "admission lena",
+      "admit karwana",
+      "bachi admit",
+      "bachi ki admission",
+      "girl admit",
+      "orphan admission",
+      "apply admission",
+      "documents for admission",
+      "admission form",
+    ],
+    response: {
+      text: "**Girls Admission**\n\nBIWS reviews admission requests for orphan girls who need care, shelter, and education.\n\nTo apply:\n1. Open the contact page\n2. Select **Admission Request** as the reason\n3. Share the child's basic details\n4. The BIWS team will review and respond with the next steps",
       quickReplies: mainMenuReplies,
       action: { label: "Apply for Admission", href: "/contact" },
     },
   },
-
-  // ── Volunteer ────────────────────────────────────────────────────────────────
   {
-    triggers: ["volunteer", "volunteering", "intern", "help out", "become a volunteer"],
+    triggers: [
+      "volunteer",
+      "volunteering",
+      "intern",
+      "internship",
+      "help out",
+      "become a volunteer",
+      "volunteer kaise",
+      "razakar",
+      "teach",
+      "teaching",
+      "mentor",
+    ],
     response: {
-      text: "🙌 **Volunteer with BIWS**\n\nWe welcome volunteers who want to make a difference! You can help with:\n\n• Teaching & tutoring\n• Skill workshops\n• Event organization\n• Administrative support\n\nReach out through our contact page and our team will connect with you.",
+      text: "**Volunteer with BIWS**\n\nVolunteers can help with tutoring, mentoring, skill workshops, events, and program support. Please contact the BIWS team so they can guide you according to your availability and skills.",
       quickReplies: mainMenuReplies,
-      action: { label: "Get Involved", href: "/contact" },
+      action: { label: "Get Involved", href: "/get-involved#become-a-volunteer" },
     },
   },
-
-  // ── Visit ────────────────────────────────────────────────────────────────────
   {
-    triggers: ["visit", "come visit", "plan a visit", "see campus", "tour"],
+    triggers: [
+      "visit",
+      "come visit",
+      "plan a visit",
+      "see campus",
+      "tour",
+      "campus visit",
+      "visit kaise",
+      "can i visit",
+      "aana hai",
+    ],
     response: {
-      text: "🏫 **Plan a Visit**\n\nWe welcome donors, volunteers, and community members to visit our campus in **Model Town, Lahore**.\n\nPlease contact us in advance to schedule your visit so we can arrange a proper welcome.",
+      text: "**Plan a Visit**\n\nBIWS welcomes donors, volunteers, and community members for planned visits. Please contact the team first so your visit can be scheduled properly.",
       quickReplies: mainMenuReplies,
-      action: { label: "Contact Us", href: "/contact" },
+      action: { label: "Plan a Visit", href: "/get-involved#visit" },
     },
   },
-
-  // ── Contact ──────────────────────────────────────────────────────────────────
   {
-    triggers: ["contact", "reach out", "get in touch", "phone", "email", "address", "contact information", "location", "where are you"],
+    triggers: [
+      "whatsapp",
+      "whats app",
+      "chat on whatsapp",
+      "message on whatsapp",
+      "whatsapp number",
+      "whatsapp pe baat",
+    ],
     response: {
-      text: "📞 **Contact BIWS**\n\n📍 **Address:** 115 H Block, Model Town, Lahore\n📱 **Phone:** 0300 4492946\n📱 **Phone 2:** 0306 8455162\n📧 **Email:** info@beguminayat.com\n\nYou can also reach us via the contact form on our website.",
-      quickReplies: mainMenuReplies,
-      action: { label: "Contact Page", href: "/contact" },
-    },
-  },
-
-  // ── WhatsApp ─────────────────────────────────────────────────────────────────
-  {
-    triggers: ["whatsapp", "whats app", "chat on whatsapp", "message on whatsapp"],
-    response: {
-      text: "💬 You can reach us directly on **WhatsApp** for quick queries, donation confirmations, or admission inquiries.",
+      text: "**WhatsApp Support**\n\nYou can contact BIWS on WhatsApp for donation confirmations, admission questions, visits, or general inquiries.",
       quickReplies: mainMenuReplies,
       action: {
         label: "Open WhatsApp",
@@ -218,50 +430,113 @@ export const knowledgeBase: KnowledgeEntry[] = [
       },
     },
   },
-
-  // ── Gallery ──────────────────────────────────────────────────────────────────
   {
-    triggers: ["gallery", "photos", "pictures", "images", "events"],
+    triggers: [
+      "contact",
+      "reach out",
+      "get in touch",
+      "phone",
+      "email",
+      "address",
+      "contact information",
+      "location",
+      "where are you",
+      "number",
+      "mobile",
+      "call",
+      "phone number",
+      "contact number",
+      "kahan",
+      "kaha hai",
+      "address kya hai",
+      "contact kaise",
+      "rabta",
+      "raabta",
+    ],
     response: {
-      text: "📸 **Gallery**\n\nExplore photos from our events, skill sessions, campus activities, Independence Day celebrations, and more.",
+      text: "**Contact BIWS**\n\n**Address:** 115 H Block, Model Town, Lahore\n**Phone:** 0300 4492946\n**Alternate:** 0306 8455162\n**Email:** info@beguminayat.com\n\nYou can also use the contact form on the website.",
+      quickReplies: mainMenuReplies,
+      action: { label: "Contact Page", href: "/contact" },
+    },
+  },
+  {
+    triggers: ["gallery", "photos", "pictures", "images", "events", "tasveer", "pictures dikhao"],
+    response: {
+      text: "**Gallery**\n\nYou can view BIWS campus moments, events, skill sessions, celebrations, and activities in the gallery.",
       quickReplies: mainMenuReplies,
       action: { label: "View Gallery", href: "/gallery" },
     },
   },
-
-  // ── How many girls ───────────────────────────────────────────────────────────
   {
-    triggers: ["how many girls", "how many children", "number of girls", "how many orphans", "capacity"],
+    triggers: [
+      "how many girls",
+      "how many children",
+      "number of girls",
+      "how many orphans",
+      "capacity",
+      "kitni girls",
+      "kitni bachiyan",
+      "90 girls",
+    ],
     response: {
-      text: "👧 BIWS currently cares for **90 orphan girls** at our campus in Model Town, Lahore.\n\nEach girl receives full care — shelter, meals, education, health support, and skill development.",
+      text: "BIWS currently cares for **90 orphan girls** at its Girls Campus in Model Town, Lahore. Each girl receives shelter, meals, education, health support, and skill development.",
       quickReplies: mainMenuReplies,
     },
   },
-
-  // ── Since when / established ─────────────────────────────────────────────────
   {
-    triggers: ["since when", "established", "founded", "how old", "when did you start", "2013"],
+    triggers: [
+      "since when",
+      "established",
+      "founded",
+      "how old",
+      "when did you start",
+      "2013",
+      "kab start",
+      "kab se",
+    ],
     response: {
-      text: "🗓️ BIWS was established in **2013** by Dr. Amna Amber and has been serving orphan girls in Lahore for over **13 years**.",
+      text: "BIWS was established in **2013** by **Dr. Amna Amber** and has been serving orphan girls in Lahore for over **13 years**.",
       quickReplies: mainMenuReplies,
     },
   },
-
-  // ── Transparency / trust ─────────────────────────────────────────────────────
   {
-    triggers: ["trust", "transparent", "legitimate", "registered", "authentic", "verified"],
+    triggers: [
+      "trust",
+      "transparent",
+      "transparency",
+      "legitimate",
+      "registered",
+      "authentic",
+      "verified",
+      "receipt milegi",
+      "donation safe",
+    ],
     response: {
-      text: "✅ **BIWS is a registered NGO** operating since 2013 with full transparency.\n\n• All donations come with **official receipts**\n• Regular updates shared with donors\n• Open to public visits at our campus\n• Thousands of donors trust us every year",
+      text: "**Trust & Transparency**\n\nBIWS is a registered NGO serving since 2013. The team provides donation acknowledgement, can guide donors with receipts, and welcomes responsible giving with clear communication.",
       quickReplies: donateReplies,
       action: { label: "About Us", href: "/about" },
     },
   },
-
-  // ── Fallback ─────────────────────────────────────────────────────────────────
+  {
+    triggers: [
+      "partner",
+      "partnership",
+      "csr",
+      "corporate",
+      "institution",
+      "institutional support",
+      "community advocate",
+    ],
+    response: {
+      text: "**Become a Partner**\n\nCorporate sponsors, institutions, NGOs, universities, trusts, and community advocates can partner with BIWS to support education, care, skills, events, and long-term programs for orphan girls.",
+      quickReplies: mainMenuReplies,
+      action: { label: "Partner With BIWS", href: "/get-involved" },
+    },
+  },
   {
     triggers: ["__fallback__"],
     response: {
-      text: "I'm sorry, I didn't quite understand that. 😊 Here are some things I can help you with:",
+      text: "I did not fully understand that. You can ask about BIWS, programs, donation, Zakat, sponsorship, admission, visits, or contact details.",
       quickReplies: mainMenuReplies,
     },
   },
@@ -269,5 +544,5 @@ export const knowledgeBase: KnowledgeEntry[] = [
 
 /** Fallback response when no match is found */
 export const fallbackResponse: BotMessage = knowledgeBase.find(
-  (e) => e.triggers[0] === "__fallback__"
+  (entry) => entry.triggers[0] === "__fallback__"
 )!.response;
