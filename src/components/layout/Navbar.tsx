@@ -6,6 +6,8 @@ import { ChevronRight, Heart, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import logo from "@/assets/logo.jpeg";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -107,8 +109,8 @@ export function Navbar() {
         >
           <div className="flex items-center justify-between bg-primary-darker px-4 py-5">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/20 shadow-inner">
-                <span className="text-base font-black text-white">B</span>
+              <div className="relative h-9 w-9 overflow-hidden rounded-xl shadow-inner">
+                <Image src={logo} alt={siteConfig.name} fill className="object-cover" />
               </div>
               <div>
                 <p className="text-sm font-bold text-white">{siteConfig.name}</p>

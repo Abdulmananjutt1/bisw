@@ -237,7 +237,7 @@ export function ChatBot() {
     <div
       className={cn(
         "fixed right-4 z-[120] flex flex-col items-end gap-3 transition-all duration-300 sm:right-6",
-        isOpen ? "bottom-6" : "bottom-24"
+        isOpen ? "bottom-4 sm:bottom-6" : "bottom-24"
       )}
     >
       {/* ── Chat window ──────────────────────────────────────────────────────── */}
@@ -257,7 +257,7 @@ export function ChatBot() {
             ? "opacity-100 scale-100 pointer-events-auto translate-y-0"
             : "opacity-0 scale-95 pointer-events-none translate-y-4"
         )}
-        style={{ maxHeight: "min(31rem, calc(100dvh - 11rem))" }}
+        style={{ maxHeight: "min(28rem, calc(100dvh - 14rem))" }}
       >
         {/* Header */}
         <div className="flex items-center gap-3 px-4 py-3 bg-primary-darker text-white shrink-0">

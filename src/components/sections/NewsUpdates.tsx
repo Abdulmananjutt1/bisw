@@ -79,7 +79,7 @@ export function NewsUpdates() {
                 <p className="mt-3 text-sm leading-relaxed text-muted">{item.description}</p>
 
                 <Link
-                  href="/contact"
+                  href={item.href}
                   className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition-all hover:gap-3"
                 >
                   Read more

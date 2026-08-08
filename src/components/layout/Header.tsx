@@ -3,6 +3,8 @@ import { Container } from "@/components/ui/Container";
 import { Navbar } from "@/components/layout/Navbar";
 import { Phone, Mail, MapPin, Heart } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "@/assets/logo.jpeg";
 
 export function Header() {
   return (
@@ -50,8 +52,14 @@ export function Header() {
         <Container className="relative flex h-18 items-center justify-between py-3 sm:h-20">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3">
-            <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-primary shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
-              <span className="relative z-10 text-xl font-black text-white">B</span>
+            <div className="relative h-12 w-12 overflow-hidden rounded-2xl transition-transform group-hover:scale-105">
+              <Image
+                src={logo}
+                alt={siteConfig.name}
+                fill
+                className="object-contain mix-blend-multiply"
+                priority
+              />
             </div>
             <div className="leading-none">
               <span className="block text-lg font-bold text-foreground sm:text-xl">

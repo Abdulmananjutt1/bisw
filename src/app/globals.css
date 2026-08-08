@@ -47,6 +47,7 @@
   --color-section-alt: var(--section-alt);
   --color-section-dark: var(--section-dark);
   --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
 }
 
 * {
@@ -62,6 +63,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
 }
 
 a[href],
@@ -176,4 +181,13 @@ button,
 .card-lift:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px -12px rgba(5, 150, 105, 0.2);
+}
+
+/* Hide scrollbar for testimonials slider */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

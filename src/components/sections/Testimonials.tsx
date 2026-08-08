@@ -1,75 +1,110 @@
+"use client";
+
+import { useRef, useState } from "react";
 import { testimonials } from "@/config/site";
 import { Container } from "@/components/ui/Container";
-import { Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
-const avatarStyles = [
-  "bg-emerald-100 text-emerald-700 ring-emerald-50",
-  "bg-primary-lighter text-primary-darker ring-emerald-50",
-  "bg-sky-100 text-sky-700 ring-sky-50",
-  "bg-rose-100 text-rose-700 ring-rose-50",
-  "bg-violet-100 text-violet-700 ring-violet-50",
-  "bg-lime-100 text-emerald-800 ring-lime-50",
-];
+type Testimonial = {
+  id: number;
+  quote: string;
+  name: string;
+  role: string;
+  initials: string;
+  image: string;
+};
+
+const list = testimonials as unknown as Testimonial[];
+// Duplicate for seamless infinite loop
+const doubled = [...list, ...list];
 
 export function Testimonials() {
+  const [paused, setPaused] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const nudge = (dir: "left" | "right") => {
+    const el = trackRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir === "left" ? -364 : 364, behavior: "smooth" });
+  };
+
   return (
     <section className="bg-white py-16 sm:py-20">
       <Container className="max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-primary">
-            <Quote className="h-4 w-4" />
-            Community Reviews
+
+        {/* Heading */}
+        <div className="mx-auto mb-10 max-w-2xl text-center">
+          <p className="inline-flex items-center rounded-full border border-primary/15 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-sm">
+            What they say
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">
-            Trusted by Donors, Visitors & Volunteers
+          <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-4xl">
+            Donor Testimonials
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted sm:text-base">
-            Feedback from people connected with BIWS Girls Campus, education
-            support, skill training, and community welfare work in Lahore.
-          </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <article
-              key={testimonial.id}
-              className="flex min-h-[220px] flex-col rounded-lg border border-slate-200/80 bg-white p-5 shadow-[0_14px_34px_-30px_rgba(15,25,35,0.55)] transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-[0_22px_48px_-34px_rgba(4,120,87,0.42)] sm:p-6"
+        {/* Slider row */}
+        <div className="flex items-center gap-4">
+
+          {/* Left btn */}
+          <button
+            onClick={() => nudge("left")}
+            aria-label="Scroll left"
+            className="shrink-0 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-md transition hover:border-primary/30 hover:bg-slate-50"
+          >
+            <ChevronLeft className="h-5 w-5 text-slate-600" />
+          </button>
+
+          {/* Marquee viewport — clips overflow */}
+          <div className="overflow-hidden flex-1">
+            <div
+              ref={trackRef}
+              className={`flex gap-6 ${paused ? "[animation-play-state:paused]" : ""}`}
+              style={{
+                animation: "marquee 30s linear infinite",
+                width: "max-content",
+              }}
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
             >
-              <Quote
-                className="h-8 w-8 fill-primary text-primary"
-                strokeWidth={3}
-              />
-
-              <p className="mt-4 flex-1 text-[15px] font-medium leading-6 text-slate-900">
-                {testimonial.quote.map((segment, index) =>
-                  segment.emphasis ? (
-                    <strong key={index} className="font-extrabold">
-                      {segment.text}
-                    </strong>
-                  ) : (
-                    <span key={index}>{segment.text}</span>
-                  )
-                )}
-              </p>
-
-              <div className="mt-6 flex items-center gap-3">
-                <div
-                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[11px] font-black ring-4 ${avatarStyles[index % avatarStyles.length]}`}
-                  aria-hidden="true"
+              {doubled.map((t, i) => (
+                <article
+                  key={`${t.id}-${i}`}
+                  className="flex w-[300px] shrink-0 flex-col items-center rounded-2xl border border-slate-200 bg-white px-7 py-8 text-center shadow-sm sm:w-[320px]"
                 >
-                  {testimonial.initials}
-                </div>
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-extrabold text-slate-950">
-                    {testimonial.name}
+                  {/* Avatar */}
+                  <div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-primary/20 shadow-sm">
+                    <Image
+                      src={t.image}
+                      alt={t.name}
+                      fill
+                      className="object-cover"
+                      unoptimized
+                    />
+                  </div>
+
+                  {/* Quote */}
+                  <p className="mt-5 text-sm leading-6 text-slate-600">
+                    {t.quote}
                   </p>
-                  <p className="mt-0.5 truncate text-[11px] font-semibold text-slate-500">
-                    {testimonial.role}
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
+
+                  {/* Name & role */}
+                  <p className="mt-5 text-sm font-bold text-slate-900">— {t.name}</p>
+                  <p className="mt-0.5 text-xs text-slate-400">{t.role}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Right btn */}
+          <button
+            onClick={() => nudge("right")}
+            aria-label="Scroll right"
+            className="shrink-0 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-md transition hover:border-primary/30 hover:bg-slate-50"
+          >
+            <ChevronRight className="h-5 w-5 text-slate-600" />
+          </button>
+
         </div>
       </Container>
     </section>

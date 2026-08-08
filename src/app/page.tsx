@@ -1,29 +1,31 @@
 import { Hero } from "@/components/sections/Hero";
 import { AboutPreview } from "@/components/sections/AboutPreview";
-import { HeroImpactStrip } from "@/components/sections/HeroImpactStrip";
+import { WhatWeOffer } from "@/components/sections/WhatWeOffer";
+import { ImpactBanner } from "@/components/sections/ImpactBanner";
 import { FeaturedCauses } from "@/components/sections/FeaturedCauses";
-import { GetInvolved } from "@/components/sections/GetInvolved";
-import { ProgramsPreview } from "@/components/sections/ProgramsPreview";
 import { GalleryPreview } from "@/components/sections/GalleryPreview";
+import { CampusHighlight } from "@/components/sections/CampusHighlight";
 import { NewsUpdates } from "@/components/sections/NewsUpdates";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FounderMessage } from "@/components/sections/FounderMessage";
-import { CallToAction } from "@/components/sections/CallToAction";
+import { FAQ } from "@/components/sections/FAQ";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
       <AboutPreview />
-      <HeroImpactStrip />
+      <WhatWeOffer />
+      <ImpactBanner />
       <FeaturedCauses />
-      <GetInvolved />
-      <ProgramsPreview />
       <GalleryPreview />
+      <CampusHighlight />
       <NewsUpdates />
-      <Testimonials />
       <FounderMessage />
-      <CallToAction />
+      <Testimonials />
+      <ContactSection />
+      <FAQ />
     </>
   );
 }

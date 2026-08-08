@@ -1,106 +1,163 @@
-import { siteConfig } from "@/config/site";
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { ArrowRight, Heart, ChevronDown, Star } from "lucide-react";
+import { Heart, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
+const slides = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=90",
+    heading: "Empowering Orphan Girls Through Hope",
+    sub: "Safe shelter, education & skills for 90 girls in Lahore since 2013.",
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1600&q=90",
+    heading: "Education That Changes Lives",
+    sub: "Every girl at BIWS receives quality schooling and learning support.",
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1600&q=90",
+    heading: "Skills for a Brighter Future",
+    sub: "Computer, IT, stitching & beautician training for self-reliance.",
+  },
+  {
+    id: 4,
+    image: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1600&q=90",
+    heading: "A Safe & Loving Home",
+    sub: "Warmth, dignity, and care for every orphan girl on our campus.",
+  },
+  {
+    id: 5,
+    image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1600&q=90",
+    heading: "Your Support Makes It Possible",
+    sub: "Donate, sponsor, or volunteer — every contribution matters.",
+  },
+];
+
 export function Hero() {
+  const [current, setCurrent] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const goTo = useCallback((index: number) => {
+    if (animating) return;
+    setAnimating(true);
+    setTimeout(() => {
+      setCurrent(index);
+      setAnimating(false);
+    }, 400);
+  }, [animating]);
+
+  const next = useCallback(() => {
+    goTo((current + 1) % slides.length);
+  }, [current, goTo]);
+
+  const prev = useCallback(() => {
+    goTo((current - 1 + slides.length) % slides.length);
+  }, [current, goTo]);
+
+  // Auto-scroll every 5s
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  const slide = slides[current];
+
   return (
-    <section className="relative flex min-h-[82vh] items-start overflow-hidden bg-[#021a12]">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=90"
-          alt="BIWS Girls Campus"
-          fill
-          className="object-cover opacity-[0.46] saturate-[1.05]"
-          priority
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-[#021a12]/70" />
-      </div>
+    <section className="relative min-h-[82vh] overflow-hidden bg-[#021a12]">
 
-      {/* Decorative grid pattern */}
-      <div className="absolute inset-0 pattern-grid opacity-[0.18]" />
+      {/* Slides */}
+      {slides.map((s, i) => (
+        <div
+          key={s.id}
+          className={`absolute inset-0 transition-opacity duration-700 ${
+            i === current ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        >
+          <Image
+            src={s.image}
+            alt={s.heading}
+            fill
+            className="object-cover"
+            priority={i === 0}
+            unoptimized
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        </div>
+      ))}
 
-      {/* Animated circles */}
-      <div className="pointer-events-none absolute right-0 top-0 h-[600px] w-[600px] -translate-y-1/4 translate-x-1/4">
-        <div className="h-full w-full rounded-full border border-primary/10 animate-spin-slow" />
-        <div className="absolute inset-12 rounded-full border border-primary/15" />
-        <div className="absolute inset-24 rounded-full border border-secondary/10" />
-      </div>
-
-      <Container className="relative z-10 pb-20 pt-10 sm:pb-24 sm:pt-12 lg:pt-12">
+      {/* Content — bottom left */}
+      <div
+        className={`absolute bottom-0 left-0 z-20 w-full px-6 pb-24 sm:px-12 lg:px-20 transition-all duration-500 ${
+          animating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+        }`}
+      >
         <div className="max-w-2xl">
-          {/* ── Left content ── */}
-          <div className="animate-fade-in-left">
-            {/* Eyebrow badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 px-4 py-2 backdrop-blur-sm">
-              <span className="flex h-2 w-2 rounded-full bg-primary-light animate-pulse-soft" />
-              <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
-                Girls Campus · Est. {siteConfig.established} · Lahore
-              </span>
-            </div>
-
-            {/* Heading */}
-            <h1 className="text-5xl font-extrabold leading-[1.1] text-white sm:text-6xl lg:text-[64px]">
-              Empowering
-              <br />
-              <span className="text-secondary-light">Orphan Girls</span>
-              <br />
-              <span className="text-white">Through Hope</span>
-            </h1>
-
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
-              Since 2013, BIWS has provided{" "}
-              <span className="font-semibold text-white">safe care and education</span> for{" "}
-              <span className="font-semibold text-secondary-light">90 orphan girls</span> in Lahore.
-            </p>
-
-            {/* Stars */}
-            <div className="mt-5 flex items-center gap-2">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-secondary-light text-secondary-light" />
-              ))}
-              <span className="ml-1 text-sm font-medium text-white/60">
-                Trusted by 100+ donors &amp; partners
-              </span>
-            </div>
-
-            {/* CTA buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button
-                href="/donate"
-                size="lg"
-                className="rounded-2xl bg-secondary hover:bg-secondary-dark text-white shadow-2xl shadow-secondary/40 border-0"
-              >
-                <Heart className="h-5 w-5" />
-                Donate Now
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-              <Button
-                href="/about"
-                variant="outline"
-                size="lg"
-                className="rounded-2xl border-white/30 text-white hover:bg-white hover:text-primary-darker"
-              >
-                Our Story
-              </Button>
-            </div>
-
+          <h1 className="text-4xl font-extrabold leading-tight text-white drop-shadow-lg sm:text-5xl lg:text-6xl">
+            {slide.heading}
+          </h1>
+          <p className="mt-4 text-base leading-relaxed text-white/75 sm:text-lg">
+            {slide.sub}
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Button
+              href="/donate"
+              size="lg"
+              className="rounded-2xl bg-primary hover:bg-primary-dark border-0 text-white shadow-xl shadow-primary/30 px-7"
+            >
+              <Heart className="h-5 w-5" />
+              Donate Now
+              <ArrowRight className="h-5 w-5" />
+            </Button>
+            <Button
+              href="/about"
+              variant="outline"
+              size="lg"
+              className="rounded-2xl border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-7"
+            >
+              Learn More
+            </Button>
           </div>
         </div>
-      </Container>
+      </div>
 
-      {/* Scroll indicator */}
-      <a
-        href="#stats"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40 hover:text-white/70 transition-colors"
-        aria-label="Scroll down"
+      {/* Left / Right arrows */}
+      <button
+        onClick={prev}
+        aria-label="Previous slide"
+        className="absolute left-4 top-1/2 z-30 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50 sm:left-6"
       >
-        <span className="text-[10px] uppercase tracking-widest">Scroll</span>
-        <ChevronDown className="h-5 w-5 animate-bounce" />
-      </a>
+        <ChevronLeft className="h-6 w-6" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next slide"
+        className="absolute right-4 top-1/2 z-30 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50 sm:right-6"
+      >
+        <ChevronRight className="h-6 w-6" />
+      </button>
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-8 right-6 z-30 flex gap-2 sm:right-12">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === current
+                ? "w-7 bg-white"
+                : "w-2 bg-white/40 hover:bg-white/70"
+            }`}
+          />
+        ))}
+      </div>
+
     </section>
   );
 }

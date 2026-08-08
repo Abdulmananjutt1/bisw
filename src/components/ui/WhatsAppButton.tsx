@@ -50,8 +50,6 @@ export function WhatsAppButton({
         "bg-[#25D366] text-white shadow-lg shadow-black/20",
         // Hover / focus
         "transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/50",
-        // Pulse ring animation
-        "after:absolute after:inset-0 after:rounded-full after:bg-[#25D366] after:opacity-40 after:animate-ping",
         isChatOpen && "pointer-events-none translate-y-4 scale-75 opacity-0",
         className
       )}
