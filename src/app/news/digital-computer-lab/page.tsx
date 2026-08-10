@@ -5,8 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Digital Computer Lab Setup | BIWS News",
-  description: "A modern computer lab is being established to teach children digital skills, web basics, and IT education at BIWS Girls Campus.",
+  title: "Digital Computer Lab at BIWS Orphanage Lahore | BIWS News",
+  description: "BIWS Orphanage in Model Town, Lahore is setting up a digital computer lab to teach orphan girls IT skills, web basics, and digital literacy — empowering their future in Pakistan.",
+  keywords: ["BIWS computer lab orphanage", "IT training orphan girls Lahore", "digital skills orphanage Pakistan"],
+  openGraph: {
+    title: "Digital Computer Lab at BIWS Orphanage Lahore",
+    description: "Modern computer lab at BIWS Orphanage, Lahore — building digital skills for 90 orphan girls in Pakistan.",
+  },
 };
 
 const stats = [

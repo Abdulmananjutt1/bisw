@@ -19,9 +19,27 @@ import {
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Programs",
+  title: "Programs — Orphan Care, Education & Skill Training | BIWS Orphanage Lahore",
   description:
-    "BIWS Girls Campus programs — orphan care, education, skill training, health & wellbeing, and safe environment for 90 girls in Lahore.",
+    "BIWS Orphanage programs in Lahore, Pakistan — residential orphan care, girls education, computer & skill training, health & wellbeing for 90 girls at Model Town campus.",
+  keywords: [
+    "orphanage programs Pakistan",
+    "orphan girls education Lahore",
+    "skill training for orphans Pakistan",
+    "vocational training girls Lahore",
+    "computer lab orphanage Pakistan",
+    "beautician training orphanage",
+    "stitching training girls Pakistan",
+    "BIWS programs",
+    "NGO programs Lahore",
+  ],
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/programs` },
+  openGraph: {
+    title: "Programs — Orphan Care, Education & Skill Training | BIWS Orphanage Lahore",
+    description:
+      "Orphan care, girls education, vocational skill training, health & safe environment — 6 programs for 90 girls at BIWS Orphanage, Model Town Lahore.",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/programs`,
+  },
 };
 
 const iconMap: Record<string, LucideIcon> = {

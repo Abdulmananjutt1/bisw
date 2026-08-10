@@ -19,8 +19,28 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Donate",
-  description: "Support BIWS Girls Campus with Zakat, child sponsorship, education support, and general donations.",
+  title: "Donate — Support Orphan Girls in Lahore | BIWS Orphanage Pakistan",
+  description:
+    "Donate to BIWS Orphanage in Lahore, Pakistan. Give Zakat, sponsor an orphan child, support girls education, or make a general donation. 90 girls need your help today.",
+  keywords: [
+    "donate to orphanage Pakistan",
+    "donate orphan girls Lahore",
+    "zakat orphanage Pakistan",
+    "sponsor orphan child Pakistan",
+    "child sponsorship Pakistan",
+    "orphan donation Lahore",
+    "charity donation Pakistan",
+    "BIWS donate",
+    "sadaqah orphans Pakistan",
+    "how to donate orphanage Pakistan",
+  ],
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/donate` },
+  openGraph: {
+    title: "Donate — Support Orphan Girls in Lahore | BIWS Orphanage Pakistan",
+    description:
+      "Support 90 orphan girls in Lahore. Give Zakat, sponsor a child, or donate to BIWS Orphanage — your gift changes lives in Pakistan.",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/donate`,
+  },
 };
 
 const impactItems = [

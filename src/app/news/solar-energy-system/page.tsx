@@ -5,8 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Solar Energy System Installation | BIWS News",
-  description: "Work underway to install a solar power system ensuring uninterrupted electricity and reduced costs for the BIWS orphanage.",
+  title: "Solar Energy System at BIWS Orphanage Lahore | BIWS News",
+  description: "BIWS Orphanage in Model Town, Lahore is installing a solar energy system to ensure uninterrupted electricity and reduce costs — directly benefiting 90 orphan girls in Pakistan.",
+  keywords: ["BIWS orphanage solar energy", "orphanage solar project Lahore", "BIWS news 2026"],
+  openGraph: {
+    title: "Solar Energy System at BIWS Orphanage Lahore",
+    description: "Solar installation at BIWS Orphanage, Model Town Lahore — powering a better future for 90 orphan girls in Pakistan.",
+  },
 };
 
 const stats = [

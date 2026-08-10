@@ -3,21 +3,25 @@ export { galleryItems } from "./gallery";
 export const siteConfig = {
   name: "BIWS",
   fullName: "Begum Inayat Welfare Society of Pakistan",
-  shortName: "Begum Inayat Welfare Society",
+  shortName: "BIWS Orphanage",
   tagline: "Girls Orphanage • Education • Skill Development",
   description:
-    "Empowering 90 orphan girls with shelter, food, education, emotional support, and life skills since 2013. BIWS Girls Campus, Model Town, Lahore.",
+    "BIWS Orphanage is Lahore's leading girls orphanage — providing shelter, education, healthcare, and skill training to orphan girls since 2012. Located in Model Town, Lahore, Pakistan.",
   url: "https://www.beguminayat.com",
   email: "info@beguminayat.com",
   phone: "0300 4492946",
   phone2: "0306 8455162",
-  address: "115 H Block, Model Town, Lahore, Pakistan",
+  address: "House No. 15, Block H, Model Town, Lahore, Pakistan",
   addressShort: "Model Town, Lahore",
-  established: "2013",
+  established: "2012",
+  foundingDate: "1 February 2012",
   founderName: "Dr. Amna Amber",
   founderTitle: "Founder — Begum Inayat Welfare Society of Pakistan (BIWS) Orphanage",
   vicePresidentName: "BIWS Leadership",
   vicePresidentTitle: "Vice President — Begum Inayat Welfare Society of Pakistan (BIWS)",
+  category: "Non-Governmental Organization",
+  subCategories: ["Non-Profit Organization", "Child Development"],
+  subSubCategories: ["Orphanage", "Social Service"],
   bank: {
     name: "Faysal Bank Ltd",
     accountName: "Begum Inayat Welfare Society of Pakistan",
@@ -26,10 +30,11 @@ export const siteConfig = {
     iban: "PK94FAYS0130006000000316",
   },
   social: {
-    facebook: "https://facebook.com/biws",
-    twitter: "https://twitter.com/biws",
-    instagram: "https://instagram.com/biws",
-    youtube: "https://youtube.com/biws",
+    facebook: "https://facebook.com/biwsorphanage",
+    twitter: "https://twitter.com/biwsorphanage",
+    instagram: "https://instagram.com/biwsophanage",
+    youtube: "https://youtube.com/biwsophanage",
+    tiktok: "https://tiktok.com/@biwsorphanapepk",
     whatsapp: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923098666299"}`,
   },
 } as const;
@@ -47,7 +52,7 @@ export const navLinks = [
 export const stats = [
   { value: "90", suffix: "", label: "Girls in Our Care" },
   { value: "5", suffix: "", label: "Skill Programs" },
-  { value: "13", suffix: "+", label: "Years of Service" },
+  { value: "14", suffix: "+", label: "Years of Service" },
   { value: "100", suffix: "+", label: "Visitors Yearly" },
 ] as const;
 

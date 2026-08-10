@@ -5,8 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Beautician & Stitching Programs | BIWS News",
-  description: "New vocational training tracks launched — beautician and stitching skills for self-reliance and career readiness at BIWS Girls Campus.",
+  title: "Beautician & Stitching Vocational Training | BIWS Orphanage Lahore",
+  description: "BIWS Orphanage in Lahore has launched beautician and stitching vocational training programs — giving orphan girls career-ready skills for self-reliance in Pakistan.",
+  keywords: ["beautician training orphanage Pakistan", "stitching training girls Lahore", "vocational training orphan girls Pakistan", "BIWS skill programs"],
+  openGraph: {
+    title: "Beautician & Stitching Vocational Training | BIWS Orphanage Lahore",
+    description: "Vocational skill training for orphan girls at BIWS Orphanage, Model Town Lahore — building independence through beautician and stitching programs.",
+  },
 };
 
 const stats = [

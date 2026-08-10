@@ -5,9 +5,23 @@ import type { Metadata } from "next";
 import { Camera, Heart, Images, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Gallery",
+  title: "Gallery — BIWS Orphanage Campus Life in Lahore, Pakistan",
   description:
-    "Photo gallery of BIWS Girls Campus - events, education, skills programs, and everyday moments of growth.",
+    "Photo gallery of BIWS Orphanage in Model Town, Lahore — campus life, girls education, skill training, events, and everyday moments of hope and growth.",
+  keywords: [
+    "BIWS orphanage gallery",
+    "orphanage Lahore photos",
+    "orphan girls campus Pakistan",
+    "BIWS girls campus photos",
+    "orphanage events Lahore",
+  ],
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/gallery` },
+  openGraph: {
+    title: "Gallery — BIWS Orphanage Campus Life in Lahore, Pakistan",
+    description:
+      "Explore life at BIWS Orphanage, Lahore — events, education, skill training and joyful moments from our Model Town campus.",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/gallery`,
+  },
 };
 
 export default function GalleryPage() {

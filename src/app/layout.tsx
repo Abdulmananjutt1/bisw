@@ -24,32 +24,95 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.shortName} — Girls Orphanage Lahore`,
-    template: `%s | ${siteConfig.name}`,
+    default: `${siteConfig.shortName} — Best Orphanage in Lahore, Pakistan`,
+    template: `%s | ${siteConfig.shortName}`,
   },
   description: siteConfig.description,
   keywords: [
+    // Primary target keyword
+    "orphanage in Lahore",
+    "orphanage in Pakistan",
+    // Brand
     "BIWS",
+    "BIWS Orphanage",
     "Begum Inayat Welfare Society",
-    "orphanage Lahore",
-    "girls orphanage",
-    "orphan girls education",
-    "charity Pakistan",
+    "Begum Inayat Welfare Society of Pakistan",
+    // Location-based
+    "orphanage Model Town Lahore",
+    "girls orphanage Lahore",
+    "girls orphanage Pakistan",
+    "best orphanage in Lahore",
+    "best orphanage Pakistan",
+    // Cause-based
+    "orphan girls education Pakistan",
+    "orphan care Pakistan",
+    "shelter for orphans Lahore",
+    "child welfare Pakistan",
+    "child development NGO Pakistan",
+    // Donation/support
+    "donate to orphanage Pakistan",
+    "sponsor orphan child Pakistan",
+    "zakat for orphans Pakistan",
+    "charity Lahore",
     "NGO Lahore",
-    "Model Town Lahore",
-    "Dr Amna Amber",
+    "NGO Pakistan",
     "welfare society Pakistan",
-    "donate orphan",
-    "child sponsorship Pakistan",
+    // Founder
+    "Dr Amna Amber",
+    // Social service
+    "social service Pakistan",
+    "non profit organization Pakistan",
+    "non governmental organization Pakistan",
+    // Skill training
+    "skill training for girls Pakistan",
+    "vocational training orphans",
+    // Additional long-tail
+    "how to donate to orphanage in Pakistan",
+    "sponsor a child Pakistan",
   ],
-  authors: [{ name: siteConfig.shortName }],
+  authors: [{ name: siteConfig.fullName }],
+  creator: siteConfig.fullName,
+  publisher: siteConfig.fullName,
+  metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: siteConfig.url,
+  },
   openGraph: {
     type: "website",
     url: siteConfig.url,
-    title: siteConfig.shortName,
+    title: `${siteConfig.shortName} — Best Orphanage in Lahore, Pakistan`,
     description: siteConfig.description,
-    siteName: siteConfig.shortName,
+    siteName: siteConfig.fullName,
+    locale: "en_PK",
+    images: [
+      {
+        url: `${siteConfig.url}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.fullName} — Orphanage in Lahore, Pakistan`,
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.shortName} — Best Orphanage in Lahore, Pakistan`,
+    description: siteConfig.description,
+    site: "@biwsorphanage",
+    creator: "@biwsorphanage",
+    images: [`${siteConfig.url}/og-image.jpg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  category: "Non-Governmental Organization",
 };
 
 export default function RootLayout({
@@ -57,8 +120,82 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NGO",
+        "@id": `${siteConfig.url}/#organization`,
+        name: siteConfig.fullName,
+        alternateName: ["BIWS", "BIWS Orphanage"],
+        description: siteConfig.description,
+        url: siteConfig.url,
+        foundingDate: siteConfig.foundingDate,
+        founder: {
+          "@type": "Person",
+          name: siteConfig.founderName,
+          jobTitle: "Founder",
+        },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "House No. 15, Block H, Model Town",
+          addressLocality: "Lahore",
+          addressRegion: "Punjab",
+          addressCountry: "PK",
+        },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: siteConfig.phone,
+            contactType: "customer support",
+            availableLanguage: ["Urdu", "English"],
+          },
+        ],
+        sameAs: [
+          siteConfig.social.facebook,
+          siteConfig.social.instagram,
+          siteConfig.social.youtube,
+          siteConfig.social.tiktok,
+        ],
+        knowsAbout: [
+          "Orphan Care",
+          "Girls Education",
+          "Child Development",
+          "Skill Training",
+          "Vocational Training",
+          "Social Service",
+        ],
+        areaServed: {
+          "@type": "Country",
+          name: "Pakistan",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteConfig.url}/#website`,
+        url: siteConfig.url,
+        name: siteConfig.fullName,
+        publisher: { "@id": `${siteConfig.url}/#organization` },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${siteConfig.url}/gallery?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
+  };
+
   return (
     <html lang="en" className={`${inter.variable} ${nunito.variable} h-full scroll-smooth`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="flex min-h-full flex-col overflow-x-hidden antialiased">
         <Header />
         <ScrollToTop />
