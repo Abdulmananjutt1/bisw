@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import { testimonials } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
 
 type Testimonial = {
   id: number;
@@ -12,10 +11,73 @@ type Testimonial = {
   name: string;
   role: string;
   initials: string;
-  image: string;
+  gender?: "male" | "female";
 };
 
-const list = testimonials as unknown as Testimonial[];
+// Female avatar icon
+function FemaleAvatar({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Background circle */}
+      <circle cx="32" cy="32" r="32" fill="#fce7f3" />
+      {/* Head */}
+      <circle cx="32" cy="24" r="10" fill="#f9a8d4" />
+      {/* Hair / hijab style */}
+      <path
+        d="M14 46c0-9.94 8.06-18 18-18s18 8.06 18 18"
+        fill="#ec4899"
+      />
+      {/* Hair top arc */}
+      <path
+        d="M22 24c0-5.52 4.48-10 10-10s10 4.48 10 10"
+        fill="#be185d"
+      />
+    </svg>
+  );
+}
+
+// Male avatar icon
+function MaleAvatar({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Background circle */}
+      <circle cx="32" cy="32" r="32" fill="#dbeafe" />
+      {/* Head */}
+      <circle cx="32" cy="24" r="10" fill="#93c5fd" />
+      {/* Body */}
+      <path
+        d="M14 46c0-9.94 8.06-18 18-18s18 8.06 18 18"
+        fill="#3b82f6"
+      />
+    </svg>
+  );
+}
+
+// Female names to detect gender
+const femaleNames = ["fatima", "zainab", "sana", "family visitor"];
+
+function isFemale(name: string): boolean {
+  const lower = name.toLowerCase();
+  return femaleNames.some((n) => lower.includes(n));
+}
+
+const list = (testimonials as unknown as Testimonial[]).map((t) => ({
+  ...t,
+  gender: isFemale(t.name) ? ("female" as const) : ("male" as const),
+}));
+
 // Duplicate for seamless infinite loop
 const doubled = [...list, ...list];
 
@@ -73,14 +135,12 @@ export function Testimonials() {
                   className="flex w-[300px] shrink-0 flex-col items-center rounded-2xl border border-slate-200 bg-white px-7 py-8 text-center shadow-sm sm:w-[320px]"
                 >
                   {/* Avatar */}
-                  <div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-primary/20 shadow-sm">
-                    <Image
-                      src={t.image}
-                      alt={t.name}
-                      fill
-                      className="object-cover"
-                      unoptimized
-                    />
+                  <div className="h-16 w-16 rounded-full border-2 border-primary/20 shadow-sm overflow-hidden">
+                    {t.gender === "female" ? (
+                      <FemaleAvatar className="h-full w-full" />
+                    ) : (
+                      <MaleAvatar className="h-full w-full" />
+                    )}
                   </div>
 
                   {/* Quote */}

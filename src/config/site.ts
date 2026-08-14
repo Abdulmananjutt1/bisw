@@ -35,7 +35,7 @@ export const siteConfig = {
     instagram: "https://instagram.com/biwsophanage",
     youtube: "https://youtube.com/biwsophanage",
     tiktok: "https://tiktok.com/@biwsorphanapepk",
-    whatsapp: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923098666299"}`,
+    whatsapp: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923004492946"}`,
   },
 } as const;
 
@@ -187,7 +187,7 @@ export const testimonials = [
   },
   {
     id: 6,
-    quote: "Since 2013, BIWS has continued its work for 90 orphan girls with steady community support and meaningful impact.",
+    quote: "Since 2012, BIWS has continued its work for 90 orphan girls with steady community support and meaningful impact.",
     name: "CSR Partner",
     role: "Community Partnership",
     initials: "CP",

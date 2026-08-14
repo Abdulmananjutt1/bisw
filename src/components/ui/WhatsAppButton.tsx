@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { CHAT_OPEN_CHANGE_EVENT } from "@/components/ui/floating-events";
 
 const WHATSAPP_NUMBER =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923098666299";
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923004492946";
 
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 

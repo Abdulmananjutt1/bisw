@@ -47,7 +47,7 @@ export function AboutPurpose() {
             <div className="mt-5 grid grid-cols-3 gap-3">
               {[
                 { value: "90", label: "girls cared for" },
-                { value: "2013", label: "since" },
+                { value: "2012", label: "since" },
                 { value: "5+", label: "skill tracks" },
               ].map((item) => (
                 <div key={item.label} className="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">

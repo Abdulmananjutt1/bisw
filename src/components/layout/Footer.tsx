@@ -117,7 +117,7 @@ export function Footer() {
             </Link>
 
             <p className="mt-5 text-sm leading-relaxed text-white/50">
-              Empowering 90 orphan girls with shelter, food, education, and life skills since 2013.
+              Empowering 90 orphan girls with shelter, food, education, and life skills since 2012.
               Founded by Dr. Amna Amber in Model Town, Lahore.
             </p>
 

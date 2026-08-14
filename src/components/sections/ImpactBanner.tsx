@@ -53,7 +53,7 @@ export function ImpactBanner() {
               <span className="text-primary-light">Changes a Life.</span>
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-white/60">
-              Since 2013, BIWS has been a home, a school, and a future for orphan
+              Since 2012, BIWS has been a home, a school, and a future for orphan
               girls in Lahore. Your support keeps this mission alive every single day.
             </p>
 

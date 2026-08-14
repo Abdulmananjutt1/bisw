@@ -25,7 +25,7 @@ export function AboutHero() {
           About <span className="text-secondary-light">BIWS</span>
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-lg text-white/85">
-          {siteConfig.fullName} - a home of hope and opportunity for 90 orphan girls in Lahore since 2013.
+          {siteConfig.fullName} - a home of hope and opportunity for 90 orphan girls in Lahore since 2012.
         </p>
 
         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 gap-4 sm:grid-cols-4">

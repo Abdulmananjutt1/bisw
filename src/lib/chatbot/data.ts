@@ -100,7 +100,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       "ngo",
     ],
     response: {
-      text: "**Begum Inayat Welfare Society of Pakistan (BIWS)** is a registered NGO founded in **2013** by **Dr. Amna Amber**.\n\nBIWS provides shelter, food, education, health support, emotional care, and life skills to **90 orphan girls** at its Girls Campus in **Model Town, Lahore**.",
+      text: "**Begum Inayat Welfare Society of Pakistan (BIWS)** is a registered NGO founded in **2012** by **Dr. Amna Amber**.\n\nBIWS provides shelter, food, education, health support, emotional care, and life skills to **90 orphan girls** at its Girls Campus in **Model Town, Lahore**.",
       quickReplies: mainMenuReplies,
       action: { label: "Learn More", href: "/about" },
     },
@@ -118,7 +118,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       "doctor amna",
     ],
     response: {
-      text: "BIWS was founded by **Dr. Amna Amber** in **2013**. Her vision is to provide orphan girls with safety, education, care, and practical skills for a dignified future.",
+      text: "BIWS was founded by **Dr. Amna Amber** in **2012**. Her vision is to provide orphan girls with safety, education, care, and practical skills for a dignified future.",
       quickReplies: mainMenuReplies,
       action: { label: "Founder's Message", href: "/about#founder" },
     },
@@ -426,7 +426,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       quickReplies: mainMenuReplies,
       action: {
         label: "Open WhatsApp",
-        href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923098666299"}`,
+        href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923004492946"}`,
       },
     },
   },
@@ -490,12 +490,12 @@ export const knowledgeBase: KnowledgeEntry[] = [
       "founded",
       "how old",
       "when did you start",
-      "2013",
+      "2012",
       "kab start",
       "kab se",
     ],
     response: {
-      text: "BIWS was established in **2013** by **Dr. Amna Amber** and has been serving orphan girls in Lahore for over **13 years**.",
+      text: "BIWS was established in **2012** by **Dr. Amna Amber** and has been serving orphan girls in Lahore for over **14 years**.",
       quickReplies: mainMenuReplies,
     },
   },
@@ -512,7 +512,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       "donation safe",
     ],
     response: {
-      text: "**Trust & Transparency**\n\nBIWS is a registered NGO serving since 2013. The team provides donation acknowledgement, can guide donors with receipts, and welcomes responsible giving with clear communication.",
+      text: "**Trust & Transparency**\n\nBIWS is a registered NGO serving since 2012. The team provides donation acknowledgement, can guide donors with receipts, and welcomes responsible giving with clear communication.",
       quickReplies: donateReplies,
       action: { label: "About Us", href: "/about" },
     },

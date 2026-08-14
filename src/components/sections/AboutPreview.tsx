@@ -9,7 +9,7 @@ const highlights = [
   "Vocational & skill training: computer, IT, stitching, beautician",
   "Safe residential campus with shelter, meals & healthcare",
   "Transparent donation management with CRM-based reporting",
-  "Active since 2013 — 13+ years of trusted service in Lahore",
+  "Active since 2012 — 14+ years of trusted service in Lahore",
 ];
 
 const achievements = [

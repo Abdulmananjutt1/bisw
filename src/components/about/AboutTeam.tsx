@@ -5,7 +5,7 @@ const team = [
   {
     name: "Dr. Amna Amber",
     role: "Founder & Director",
-    bio: "Founded BIWS in 2013 with the mission to provide every orphan girl with a dignified, educated, and self-reliant future.",
+    bio: "Founded BIWS in 2012 with the mission to provide every orphan girl with a dignified, educated, and self-reliant future.",
   },
   {
     name: "Campus Administration",

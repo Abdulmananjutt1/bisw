@@ -3,7 +3,7 @@ import { Award, Calendar, GraduationCap, HeartHandshake, Home, Laptop, Users } f
 
 const milestones = [
   {
-    year: "2013",
+    year: "2012",
     title: "BIWS Girls Campus Founded",
     event:
       "Dr. Amna Amber began BIWS in Model Town, Lahore with a clear purpose: to give orphan girls a safe, caring home.",
@@ -70,7 +70,7 @@ export function AboutJourney() {
               </p>
               <div className="mt-5 grid grid-cols-3 gap-3">
                 {[
-                  { value: "2013", label: "founded" },
+                  { value: "2012", label: "founded" },
                   { value: "90", label: "girls" },
                   { value: "5+", label: "programs" },
                 ].map((item) => (

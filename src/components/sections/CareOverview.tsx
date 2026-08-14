@@ -61,7 +61,7 @@ const carePillars: {
 
 const quickFacts = [
   { value: "90", label: "Girls in care" },
-  { value: "2013", label: "Serving since" },
+  { value: "2012", label: "Serving since" },
   { value: "5", label: "Skill programs" },
 ];
 

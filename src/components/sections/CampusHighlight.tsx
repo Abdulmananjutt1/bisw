@@ -1,5 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
-import { ShieldCheck, GraduationCap, Smile, Sparkles } from "lucide-react";
+import { ShieldCheck, GraduationCap, Smile, Sparkles, VideoOff } from "lucide-react";
 import Link from "next/link";
 
 const lifePoints = [
@@ -50,7 +53,7 @@ export function CampusHighlight() {
           {/* Left — Video */}
           <div className="overflow-hidden rounded-3xl shadow-xl shadow-slate-900/10 ring-1 ring-slate-200">
             <video
-              src="/video.mp4"
+              src="/video1.mp4"
               autoPlay
               loop
               muted

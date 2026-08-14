@@ -28,7 +28,7 @@ export function AboutStory() {
             <div className="mt-6 space-y-4 leading-relaxed text-muted">
               <p>
                 Begum Inayat Welfare Society was founded in{" "}
-                <strong className="text-foreground">2013</strong> by{" "}
+                <strong className="text-foreground">2012</strong> by{" "}
                 <strong className="text-foreground">Dr. Amna Amber</strong> with a simple yet
                 powerful belief: no orphan girl should feel alone, unsafe, or without opportunity.
               </p>

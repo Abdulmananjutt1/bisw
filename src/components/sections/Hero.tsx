@@ -10,7 +10,7 @@ const slides = [
     id: 1,
     image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=90",
     heading: "Empowering Orphan Girls Through Hope",
-    sub: "Safe shelter, education & skills for 90 girls in Lahore since 2013.",
+    sub: "Safe shelter, education & skills for 90 girls in Lahore since 2012.",
   },
   {
     id: 2,

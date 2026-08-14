@@ -24,9 +24,9 @@ const impactItems: {
     tone: "bg-slate-100 text-slate-700",
   },
   {
-    value: "13+",
+    value: "14+",
     label: "Years of Service",
-    detail: "Serving orphan girls in Lahore since 2013.",
+    detail: "Serving orphan girls in Lahore since 2012.",
     icon: ShieldCheck,
     tone: "bg-gray-100 text-gray-700",
   },
