@@ -3,24 +3,39 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const team = [
   {
-    name: "Dr. Amna Amber",
-    role: "Founder & Director",
-    bio: "Founded BIWS in 2012 with the mission to provide every orphan girl with a dignified, educated, and self-reliant future.",
+    name: "Aamna Amber",
+    role: "President / Founder",
+    bio: "Social Worker and Dress Designing professional. Founded BIWS in 2012 with the vision to provide orphan girls a dignified, educated, and self-reliant future.",
   },
   {
-    name: "Campus Administration",
-    role: "Operations & Management",
-    bio: "Oversees daily campus operations, admissions, donor relations, and all welfare programs.",
+    name: "Naeem Siddiqi",
+    role: "Vice President",
+    bio: "Ex-Banker with extensive financial experience, supporting BIWS leadership and strategic direction.",
   },
   {
-    name: "Education Team",
-    role: "Teachers & Tutors",
-    bio: "Dedicated educators providing quality schooling and academic support to all 90 girls.",
+    name: "Aayan Sameer",
+    role: "General Secretary",
+    bio: "Businessman overseeing organizational affairs, coordination, and day-to-day management of BIWS.",
   },
   {
-    name: "Skills Training Faculty",
-    role: "Vocational Trainers",
-    bio: "Expert trainers in computer education, IT, beautician, and stitching programs.",
+    name: "Mohammad Akram",
+    role: "Finance Secretary",
+    bio: "Businessman responsible for financial management, accounts, and transparent fund handling at BIWS.",
+  },
+  {
+    name: "Saqib Munir",
+    role: "Executive Member",
+    bio: "Businessman contributing to BIWS operations and welfare program support.",
+  },
+  {
+    name: "Javed Bhatti",
+    role: "Executive Member",
+    bio: "Businessman actively involved in BIWS community outreach and program development.",
+  },
+  {
+    name: "Attique Ahmed",
+    role: "Executive Member",
+    bio: "Civil Engineer providing infrastructure and technical support to the BIWS Girls Campus.",
   },
 ] as const;
 
@@ -29,7 +44,7 @@ export function AboutTeam() {
     <section id="team" className="scroll-mt-24 bg-[#f8fafc] py-16 sm:py-20">
       <Container>
         <SectionHeading title="Our Team" subtitle="The dedicated people behind BIWS Girls Campus." />
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {team.map((member) => (
             <div
               key={member.name}
