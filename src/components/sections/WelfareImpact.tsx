@@ -74,9 +74,6 @@ export function WelfareImpact() {
         {/* Heading */}
         <AnimatedSection animation="fade-in-down" threshold={0.3}>
           <div className="mb-10 text-center">
-            <h2 className="text-2xl font-black text-primary sm:text-3xl lg:text-4xl">
-              Your Impact In 2025
-            </h2>
           </div>
         </AnimatedSection>
 

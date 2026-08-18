@@ -94,7 +94,6 @@ export function Testimonials() {
   return (
     <section className="bg-white py-16 sm:py-20">
       <Container className="max-w-6xl">
-
         {/* Heading */}
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <p className="inline-flex items-center rounded-full border border-primary/15 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-sm">
@@ -104,9 +103,10 @@ export function Testimonials() {
             Donor Testimonials
           </h2>
         </div>
+      </Container>
 
-        {/* Slider row */}
-        <div className="flex items-center gap-4">
+      {/* Slider row — full width, no container clipping */}
+      <div className="flex items-center gap-4 px-4 sm:px-8">
 
           {/* Left btn */}
           <button
@@ -166,7 +166,6 @@ export function Testimonials() {
           </button>
 
         </div>
-      </Container>
     </section>
   );
 }

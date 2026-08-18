@@ -120,7 +120,7 @@ export function ContactSection() {
                       name="name"
                       required
                       placeholder="Your full name"
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-gray-900 placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 [&:-webkit-autofill]:bg-slate-50 [&:-webkit-autofill]:[box-shadow:0_0_0_1000px_#f8fafc_inset] [&:-webkit-autofill]:[-webkit-text-fill-color:#0f1923]"
                     />
                   </div>
                   <div>
@@ -130,7 +130,7 @@ export function ContactSection() {
                       type="email"
                       required
                       placeholder="you@example.com"
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-gray-900 placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 [&:-webkit-autofill]:bg-slate-50 [&:-webkit-autofill]:[box-shadow:0_0_0_1000px_#f8fafc_inset] [&:-webkit-autofill]:[-webkit-text-fill-color:#0f1923]"
                     />
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export function ContactSection() {
                     name="subject"
                     required
                     placeholder="How can we help?"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-gray-900 placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                   />
                 </div>
 
@@ -152,7 +152,7 @@ export function ContactSection() {
                     required
                     rows={5}
                     placeholder="Tell us about your inquiry..."
-                    className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-gray-900 placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                   />
                 </div>
 
