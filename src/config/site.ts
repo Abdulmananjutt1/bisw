@@ -24,7 +24,7 @@ export const siteConfig = {
   bank: {
     name: "Faysal Bank Limited",
     accountName: "Begum Inayat Welfare Society of Pakistan",
-    branch: "Nw Garden Town, Lahore (0130)",
+    branch: "",
     accountNo: "0130006000000316",
     iban: "PK94FAYS0130006D00000316",
   },
