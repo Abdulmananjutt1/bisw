@@ -22,10 +22,11 @@ export function Input({ label, error, className, id, ...props }: InputProps) {
       <input
         id={inputId}
         className={cn(
-          "w-full rounded-lg border border-border bg-white px-4 py-2.5 text-foreground",
+          "w-full rounded-lg border border-border bg-white px-4 py-2.5 text-gray-900",
           "placeholder:text-muted/60",
           "focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20",
           "disabled:cursor-not-allowed disabled:opacity-50",
+          "[&:-webkit-autofill]:[box-shadow:0_0_0_1000px_white_inset] [&:-webkit-autofill]:[-webkit-text-fill-color:#111827]",
           error && "border-red-500 focus:border-red-500 focus:ring-red-500/20",
           className
         )}
@@ -63,7 +64,7 @@ export function Textarea({
       <textarea
         id={inputId}
         className={cn(
-          "w-full rounded-lg border border-border bg-white px-4 py-2.5 text-foreground",
+          "w-full rounded-lg border border-border bg-white px-4 py-2.5 text-gray-900",
           "placeholder:text-muted/60",
           "focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20",
           "disabled:cursor-not-allowed disabled:opacity-50",
