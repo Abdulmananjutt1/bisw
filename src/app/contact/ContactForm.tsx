@@ -33,17 +33,17 @@ const contactReasons = [
 ];
 
 const campusAddress =
-  "Begum Inayat Welfare Society of Pakistan Orphanage, Jamia Masjid Qadria Tower's street Main Bazar Awan Market, Lahore - Kasur Rd, Awan Market, Lahore, Pakistan";
+  "Begum Inayat Welfare Society of Pakistan, 115 H Model Town, Lahore, Pakistan";
 
 const googleMapsUrl =
-  "https://www.google.com/maps/dir//Begum+Inayat+Welfare+Society+of+Pakistan+Orphanage,+Jamia+Masjid+Qadria+Tower's+street+Main+Bazar+Awan+Market,+Lahore+%E2%80%93+Kasur+Rd,+Awan+Market,+Lahore,+Pakistan/@31.5290249,74.3264755,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39190424b61b131d:0x3434927ea7941df5!2m2!1d74.3615366!2d31.4319551?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D";
+  "https://www.google.com/maps/search/115+H+Model+Town+Lahore+Pakistan";
 
 const googleMapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(campusAddress)}&z=16&output=embed`;
 
 const contactDetails: { title: string; content: string; href: string; icon: LucideIcon }[] = [
   { title: "Call us", content: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, "")}`, icon: Phone },
   { title: "Email us", content: siteConfig.email, href: `mailto:${siteConfig.email}`, icon: Mail },
-  { title: "Visit us", content: "Awan Market, Lahore", href: googleMapsUrl, icon: MapPin },
+  { title: "Visit us", content: "115 H Model Town, Lahore", href: googleMapsUrl, icon: MapPin },
 ];
 
 export function ContactForm() {
@@ -276,7 +276,7 @@ export function ContactForm() {
                 Campus details
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                BIWS Orphanage, Awan Market
+                BIWS Orphanage, Model Town
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 Please call before visiting so our team can guide you with the

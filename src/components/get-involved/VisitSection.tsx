@@ -4,10 +4,10 @@ import { siteConfig } from "@/config/site";
 import { ArrowRight, CalendarCheck, Clock3, MapPin, Phone } from "lucide-react";
 
 const campusAddress =
-  "Begum Inayat Welfare Society of Pakistan Orphanage, Jamia Masjid Qadria Tower's street Main Bazar Awan Market, Lahore - Kasur Rd, Awan Market, Lahore, Pakistan";
+  "Begum Inayat Welfare Society of Pakistan, 115 H Model Town, Lahore, Pakistan";
 
 const googleMapsUrl =
-  "https://www.google.com/maps/dir//Begum+Inayat+Welfare+Society+of+Pakistan+Orphanage,+Jamia+Masjid+Qadria+Tower's+street+Main+Bazar+Awan+Market,+Lahore+%E2%80%93+Kasur+Rd,+Awan+Market,+Lahore,+Pakistan/@31.5290249,74.3264755,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39190424b61b131d:0x3434927ea7941df5!2m2!1d74.3615366!2d31.4319551?entry=ttu";
+  "https://www.google.com/maps/search/115+H+Model+Town+Lahore+Pakistan";
 
 const visitDetails = [
   {
