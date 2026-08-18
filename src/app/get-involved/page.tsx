@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     "support orphan girls Pakistan",
     "charity volunteer Lahore",
   ],
-  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/get-involved` },
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.biwsorphanage.com"}/get-involved` },
   openGraph: {
     title: "Get Involved — Volunteer, Sponsor & Support | BIWS Orphanage Lahore",
     description:
       "Sponsor a child, volunteer at our campus, plan a visit, or support BIWS Orphanage in Lahore, Pakistan.",
-    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/get-involved`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.biwsorphanage.com"}/get-involved`,
   },
 };
 

@@ -5,7 +5,7 @@ import { Award } from "lucide-react";
 
 const heroStats = [
   { value: 90, suffix: "", label: "Girls" },
-  { value: 13, suffix: "+", label: "Years" },
+  { value: 14, suffix: "+", label: "Years" },
   { value: 5, suffix: "+", label: "Programs" },
   { value: 100, suffix: "+", label: "Visitors/yr" },
 ] as const;

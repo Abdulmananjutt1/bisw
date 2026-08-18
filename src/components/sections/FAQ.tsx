@@ -51,7 +51,7 @@ const faqs = [
     id: 8,
     question: "Where is the BIWS campus located?",
     answer:
-      "Our campus is located at 115 H Block, Model Town, Lahore, Pakistan. You can reach us via phone at 0300 4492946 or email at info@beguminayat.com.",
+      "Our campus is located at 115 H Model Town, Lahore, Pakistan. You can reach us via phone at 0304 3332497 or email at beguminayatorphanage@gmail.com.",
   },
 ];
 

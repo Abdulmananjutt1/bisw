@@ -46,12 +46,12 @@ export const metadata: Metadata = {
   title: "BIWS Orphanage — Best Orphanage in Lahore | Begum Inayat Welfare Society of Pakistan",
   description:
     "BIWS Orphanage is the leading girls orphanage in Lahore, Pakistan — providing shelter, education, healthcare, and skill training to 90 orphan girls since 2012. Founded by Dr. Amna Amber in Model Town, Lahore.",
-  alternates: { canonical: "https://www.beguminayat.com" },
+  alternates: { canonical: "https://www.biwsorphanage.com" },
   openGraph: {
     title: "BIWS Orphanage — Best Orphanage in Lahore, Pakistan",
     description:
       "Providing a safe home, quality education, and life skills to 90 orphan girls since 2012. BIWS Orphanage, Model Town, Lahore — founded by Dr. Amna Amber.",
-    url: "https://www.beguminayat.com",
+    url: "https://www.biwsorphanage.com",
   },
 };
 

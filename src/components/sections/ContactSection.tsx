@@ -64,7 +64,6 @@ export function ContactSection() {
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-muted">Call Us</p>
                 <p className="mt-0.5 text-base font-semibold text-foreground">{siteConfig.phone}</p>
-                <p className="text-sm text-muted">{siteConfig.phone2}</p>
               </div>
             </a>
 

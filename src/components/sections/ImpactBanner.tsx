@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const stats = [
   { value: "90+",  label: "Orphan Girls in Care" },
-  { value: "13+",  label: "Years of Service" },
+  { value: "14+",  label: "Years of Service" },
   { value: "5",    label: "Skill Programs" },
   { value: "100+", label: "Donors & Partners" },
 ];

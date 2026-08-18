@@ -14,7 +14,7 @@ const storyHighlights = [
 
 const founderStats = [
   { value: "90", label: "Girls" },
-  { value: "13+", label: "Years" },
+  { value: "14+", label: "Years" },
   { value: "5+", label: "Skills" },
 ] as const;
 

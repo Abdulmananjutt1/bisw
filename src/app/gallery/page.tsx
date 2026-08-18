@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "BIWS girls campus photos",
     "orphanage events Lahore",
   ],
-  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/gallery` },
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.biwsorphanage.com"}/gallery` },
   openGraph: {
     title: "Gallery — BIWS Orphanage Campus Life in Lahore, Pakistan",
     description:
       "Explore life at BIWS Orphanage, Lahore — events, education, skill training and joyful moments from our Model Town campus.",
-    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/gallery`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.biwsorphanage.com"}/gallery`,
   },
 };
 

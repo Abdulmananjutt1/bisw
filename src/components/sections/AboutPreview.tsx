@@ -14,7 +14,7 @@ const highlights = [
 
 const achievements = [
   { icon: Users2, value: "90+", label: "Girls in Care" },
-  { icon: Award, value: "13+", label: "Years Active" },
+  { icon: Award, value: "14+", label: "Years Active" },
 ];
 
 export function AboutPreview() {

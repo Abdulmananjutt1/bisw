@@ -286,7 +286,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       "payment details",
     ],
     response: {
-      text: "**Bank Transfer Details**\n\n**Bank:** Faysal Bank Ltd\n**Account Name:** Begum Inayat Welfare Society of Pakistan\n**Account No:** 0130006000000316\n**IBAN:** PK94FAYS0130006000000316\n**Branch:** Nw Garden Town, Lahore (0130)\n\nAfter transfer, please share your payment screenshot with the BIWS team.",
+      text: "**Bank Transfer Details**\n\n**Bank:** Faysal Bank Limited\n**Account Name:** Begum Inayat Welfare Society of Pakistan\n**Account No:** 0130006000000316\n**IBAN:** PK94FAYS0130006D00000316\n**Branch:** Nw Garden Town, Lahore (0130)\n\nAfter transfer, please share your payment screenshot with the BIWS team.",
       quickReplies: donateReplies,
     },
   },
@@ -303,7 +303,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       "receipt chahiye",
     ],
     response: {
-      text: "**Donation Confirmation**\n\nAfter sending your donation, please share your transaction screenshot or payment details with the BIWS team. We will verify it and guide you about the official receipt.\n\nYou can call or message **0300 4492946** or email **info@beguminayat.com**.",
+      text: "**Donation Confirmation**\n\nAfter sending your donation, please share your transaction screenshot or payment details with the BIWS team. We will verify it and guide you about the official receipt.\n\nYou can call or message **0304 3332497** or email **beguminayatorphanage@gmail.com**.",
       quickReplies: donateReplies,
       action: { label: "Contact Donation Team", href: "/contact" },
     },
@@ -426,7 +426,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       quickReplies: mainMenuReplies,
       action: {
         label: "Open WhatsApp",
-        href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923004492946"}`,
+        href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923043332497"}`,
       },
     },
   },
@@ -454,7 +454,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       "raabta",
     ],
     response: {
-      text: "**Contact BIWS**\n\n**Address:** 115 H Block, Model Town, Lahore\n**Phone:** 0300 4492946\n**Alternate:** 0306 8455162\n**Email:** info@beguminayat.com\n\nYou can also use the contact form on the website.",
+      text: "**Contact BIWS**\n\n**Address:** 115 H Model Town, Lahore\n**Phone:** 0304 3332497\n**Email:** beguminayatorphanage@gmail.com\n\nYou can also use the contact form on the website.",
       quickReplies: mainMenuReplies,
       action: { label: "Contact Page", href: "/contact" },
     },

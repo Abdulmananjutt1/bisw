@@ -33,12 +33,12 @@ export const metadata: Metadata = {
     "BIWS programs",
     "NGO programs Lahore",
   ],
-  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/programs` },
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.biwsorphanage.com"}/programs` },
   openGraph: {
     title: "Programs — Orphan Care, Education & Skill Training | BIWS Orphanage Lahore",
     description:
       "Orphan care, girls education, vocational skill training, health & safe environment — 6 programs for 90 girls at BIWS Orphanage, Model Town Lahore.",
-    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/programs`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.biwsorphanage.com"}/programs`,
   },
 };
 
@@ -170,7 +170,7 @@ export default function ProgramsPage() {
             {[
               { value: "6", label: "Programs" },
               { value: "90", label: "Girls Served" },
-              { value: "13+", label: "Years Running" },
+              { value: "14+", label: "Years Running" },
             ].map((s) => (
               <div key={s.label} className="rounded-xl border border-white/10 bg-white/10 px-3 py-3 shadow-sm backdrop-blur-sm">
                 <p className="text-xl font-black text-secondary-light sm:text-2xl">{s.value}</p>

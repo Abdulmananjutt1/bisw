@@ -35,7 +35,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://www.tiktok.com/@biws",
+    href: siteConfig.social.tiktok,
     label: "TikTok",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
@@ -199,17 +199,6 @@ export function Footer() {
                   className="text-sm text-white/50 transition-colors hover:text-white"
                 >
                   {siteConfig.phone}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary/20">
-                  <Phone className="h-3.5 w-3.5 text-primary-light" />
-                </div>
-                <a
-                  href={`tel:${siteConfig.phone2.replace(/\s/g, "")}`}
-                  className="text-sm text-white/50 transition-colors hover:text-white"
-                >
-                  {siteConfig.phone2}
                 </a>
               </li>
               <li className="flex items-center gap-3">

@@ -315,22 +315,6 @@ export function ContactForm() {
                   </span>
                 </a>
 
-                <a
-                  href={`tel:${siteConfig.phone2.replace(/\s/g, "")}`}
-                  className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm transition-colors hover:text-primary"
-                >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <Phone className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block text-xs font-bold uppercase tracking-wider text-muted">
-                      Alternate number
-                    </span>
-                    <span className="mt-1 block text-sm font-bold text-foreground">
-                      {siteConfig.phone2}
-                    </span>
-                  </span>
-                </a>
               </div>
 
               <div className="mt-7 flex flex-wrap gap-3">

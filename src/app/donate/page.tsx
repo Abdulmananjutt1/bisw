@@ -34,18 +34,18 @@ export const metadata: Metadata = {
     "sadaqah orphans Pakistan",
     "how to donate orphanage Pakistan",
   ],
-  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/donate` },
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.biwsorphanage.com"}/donate` },
   openGraph: {
     title: "Donate — Support Orphan Girls in Lahore | BIWS Orphanage Pakistan",
     description:
       "Support 90 orphan girls in Lahore. Give Zakat, sponsor a child, or donate to BIWS Orphanage — your gift changes lives in Pakistan.",
-    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beguminayat.com"}/donate`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.biwsorphanage.com"}/donate`,
   },
 };
 
 const impactItems = [
   { value: 90, suffix: "", label: "Girls in our care", icon: Heart },
-  { value: 13, suffix: "+", label: "Years of service", icon: Sparkles },
+  { value: 14, suffix: "+", label: "Years of service", icon: Sparkles },
   { value: 5, suffix: "", label: "Skills programs", icon: GraduationCap },
   { value: 100, suffix: "%", label: "Care with dignity", icon: ShieldCheck },
 ];
@@ -134,7 +134,7 @@ export default function DonatePage() {
             <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary-light">Donate directly</p><h2 className="mt-3 text-3xl font-bold tracking-tight text-white">Bank transfer details</h2><p className="mt-3 max-w-lg leading-relaxed text-white/65">For Zakat, Sadaqah, or general donation, transfer directly to BIWS and share your receipt with our team for acknowledgement.</p></div>
             <div className="rounded-[1.5rem] border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm"><div className="flex items-start gap-3"><Banknote className="mt-0.5 h-5 w-5 text-secondary-light" /><div><p className="font-bold">{siteConfig.bank.name}</p><p className="mt-1 text-sm text-white/60">{siteConfig.bank.accountName}</p></div></div><div className="mt-5 space-y-2 rounded-xl bg-black/15 p-4 font-mono text-sm"><p>AC# {siteConfig.bank.accountNo}</p><p className="break-all text-primary-light">IBAN: {siteConfig.bank.iban}</p><p className="font-sans text-xs text-white/55">{siteConfig.bank.branch}</p></div></div>
           </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/75 transition-colors hover:bg-white/10"><Smartphone className="h-5 w-5 text-primary-light" /> Mobile wallet details: {siteConfig.phone}</a><a href={`mailto:${siteConfig.email}?subject=Donation confirmation`} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/75 transition-colors hover:bg-white/10"><FileText className="h-5 w-5 text-primary-light" /> Share your donation confirmation</a><a href={`tel:${siteConfig.phone2.replace(/\s/g, "")}`} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/75 transition-colors hover:bg-white/10"><Phone className="h-5 w-5 text-primary-light" /> Call donation help: {siteConfig.phone2}</a></div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2"><a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/75 transition-colors hover:bg-white/10"><Smartphone className="h-5 w-5 text-primary-light" /> Mobile wallet details: {siteConfig.phone}</a><a href={`mailto:${siteConfig.email}?subject=Donation confirmation`} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/75 transition-colors hover:bg-white/10"><FileText className="h-5 w-5 text-primary-light" /> Share your donation confirmation</a></div>
         </Container>
       </section>
 

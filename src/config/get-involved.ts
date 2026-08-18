@@ -100,7 +100,7 @@ export const supportPages: SupportPage[] = [
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1400&q=85",
     icon: "ClipboardPenLine",
     cta: "Call for procedure",
-    ctaHref: `tel:${siteConfig.phone2.replace(/\s/g, "")}`,
+    ctaHref: `tel:${siteConfig.phone.replace(/\s/g, "")}`,
     secondaryCta: "Send an email",
     secondaryHref: `mailto:${siteConfig.email}?subject=Adoption Procedure Inquiry`,
     highlights: [

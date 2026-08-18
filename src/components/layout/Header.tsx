@@ -22,14 +22,6 @@ export function Header() {
             </a>
             <span className="text-white/20">|</span>
             <a
-              href={`tel:${siteConfig.phone2.replace(/\s/g, "")}`}
-              className="flex items-center gap-1.5 text-xs text-white/75 transition-colors hover:text-white"
-            >
-              <Phone className="h-3 w-3 text-primary-light" />
-              {siteConfig.phone2}
-            </a>
-            <span className="text-white/20">|</span>
-            <a
               href={`mailto:${siteConfig.email}`}
               className="flex items-center gap-1.5 text-xs text-white/75 transition-colors hover:text-white"
             >

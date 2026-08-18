@@ -103,19 +103,6 @@ export function CallToAction() {
                       <p className="font-bold text-white">{siteConfig.phone}</p>
                     </div>
                   </a>
-
-                  <a
-                    href={`tel:${siteConfig.phone2.replace(/\s/g, "")}`}
-                    className="flex items-center gap-4 rounded-2xl border border-emerald-100/20 bg-primary/20 p-4 transition-all hover:bg-primary/30"
-                  >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/30 shadow-inner">
-                      <Phone className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-white/50">Alternate</p>
-                      <p className="font-bold text-white">{siteConfig.phone2}</p>
-                    </div>
-                  </a>
                 </div>
 
                 <div className="mt-6 rounded-2xl border border-emerald-100/15 bg-primary/15 p-4 text-center">

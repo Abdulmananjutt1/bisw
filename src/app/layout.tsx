@@ -148,7 +148,7 @@ export default function RootLayout({
         },
         address: {
           "@type": "PostalAddress",
-          streetAddress: "House No. 15, Block H, Model Town",
+          streetAddress: "115 H Model Town",
           addressLocality: "Lahore",
           addressRegion: "Punjab",
           addressCountry: "PK",
