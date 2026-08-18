@@ -50,7 +50,7 @@ export function SupportWays() {
                 className="scroll-mt-28 overflow-hidden rounded-[1.75rem] border border-gray-200 bg-[#f7f8f7] shadow-sm"
               >
                 <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-                  <div className={imageFirst ? "relative min-h-[280px] lg:order-2" : "relative min-h-[280px]"}>
+                  <div className={imageFirst ? "relative min-h-[240px] sm:min-h-[280px] lg:order-2" : "relative min-h-[240px] sm:min-h-[280px]"}>
                     <Image
                       src={item.image}
                       alt={item.title}
