@@ -81,13 +81,13 @@ export function ContactForm() {
 
   return (
     <>
-      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#063f30] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
+      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#004370] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-45"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=88')", backgroundPosition: "right center" }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-[#052d21]/75" />
+        <div className="absolute inset-0 bg-[#003357]/55" />
         <div className="absolute inset-0 opacity-15 pattern-grid" />
         <div className="absolute -bottom-24 -right-20 h-72 w-72 rounded-full border-[28px] border-white/5" />
         <Container className="relative flex h-full items-center">
@@ -119,7 +119,7 @@ export function ContactForm() {
                 href={href}
                 target={title === "Visit us" ? "_blank" : undefined}
                 rel={title === "Visit us" ? "noopener noreferrer" : undefined}
-                className="group flex items-center gap-4 rounded-2xl border border-white/60 bg-white p-5 shadow-xl shadow-emerald-950/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-950/15"
+                className="group flex items-center gap-4 rounded-2xl border border-white/60 bg-white p-5 shadow-xl shadow-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/15"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
                   <Icon className="h-5 w-5" />

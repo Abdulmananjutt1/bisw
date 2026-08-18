@@ -2,15 +2,45 @@ import { Hero } from "@/components/sections/Hero";
 import { AboutPreview } from "@/components/sections/AboutPreview";
 import { WhatWeOffer } from "@/components/sections/WhatWeOffer";
 import { ImpactBanner } from "@/components/sections/ImpactBanner";
-import { FeaturedCauses } from "@/components/sections/FeaturedCauses";
-import { GalleryPreview } from "@/components/sections/GalleryPreview";
-import { CampusHighlight } from "@/components/sections/CampusHighlight";
-import { NewsUpdates } from "@/components/sections/NewsUpdates";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { FounderMessage } from "@/components/sections/FounderMessage";
-import { FAQ } from "@/components/sections/FAQ";
-import { ContactSection } from "@/components/sections/ContactSection";
+import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+
+// Lazy load components with animations
+const WelfareImpact = dynamic(() => import("@/components/sections/WelfareImpact").then(mod => ({ default: mod.WelfareImpact })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const FeaturedCauses = dynamic(() => import("@/components/sections/FeaturedCauses").then(mod => ({ default: mod.FeaturedCauses })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const GalleryPreview = dynamic(() => import("@/components/sections/GalleryPreview").then(mod => ({ default: mod.GalleryPreview })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const CampusHighlight = dynamic(() => import("@/components/sections/CampusHighlight").then(mod => ({ default: mod.CampusHighlight })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const NewsUpdates = dynamic(() => import("@/components/sections/NewsUpdates").then(mod => ({ default: mod.NewsUpdates })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then(mod => ({ default: mod.Testimonials })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const FounderMessage = dynamic(() => import("@/components/sections/FounderMessage").then(mod => ({ default: mod.FounderMessage })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const FAQ = dynamic(() => import("@/components/sections/FAQ").then(mod => ({ default: mod.FAQ })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const ContactSection = dynamic(() => import("@/components/sections/ContactSection").then(mod => ({ default: mod.ContactSection })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
 
 export const metadata: Metadata = {
   title: "BIWS Orphanage — Best Orphanage in Lahore | Begum Inayat Welfare Society of Pakistan",
@@ -32,6 +62,7 @@ export default function HomePage() {
       <AboutPreview />
       <WhatWeOffer />
       <ImpactBanner />
+      <WelfareImpact />
       <FeaturedCauses />
       <GalleryPreview />
       <CampusHighlight />

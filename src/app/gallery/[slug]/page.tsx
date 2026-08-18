@@ -62,7 +62,7 @@ export default async function GalleryDetailPage({
 
   return (
     <>
-      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#052d21] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
+      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#004370] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
         <Image
           src={item.image}
           alt={item.title}
@@ -72,7 +72,7 @@ export default async function GalleryDetailPage({
           className="object-cover opacity-35"
           unoptimized
         />
-        <div className="absolute inset-0 bg-[#052d21]/75" />
+        <div className="absolute inset-0 bg-[#003357]/55" />
 
         <Container className="relative flex h-full flex-col justify-center">
           <Link
@@ -96,7 +96,7 @@ export default async function GalleryDetailPage({
               </p>
             </div>
 
-            <div className="grid gap-3 rounded-[1.5rem] border border-white/12 bg-white/10 p-5 text-white shadow-2xl shadow-emerald-950/20 backdrop-blur-md">
+            <div className="grid gap-3 rounded-[1.5rem] border border-white/12 bg-white/10 p-5 text-white shadow-2xl shadow-primary/20 backdrop-blur-md">
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/12 text-secondary-light">
                   <CalendarDays className="h-5 w-5" />
@@ -130,7 +130,7 @@ export default async function GalleryDetailPage({
             {item.impact.map((stat) => (
               <div
                 key={`${stat.value}-${stat.label}`}
-                className="rounded-2xl border border-emerald-100 bg-white p-5 shadow-lg shadow-emerald-950/5"
+                className="rounded-2xl border border-primary/10 bg-white p-5 shadow-lg shadow-primary/5"
               >
                 <p className="text-2xl font-black text-primary">{stat.value}</p>
                 <p className="mt-1 text-sm font-medium text-muted">{stat.label}</p>
@@ -156,7 +156,7 @@ export default async function GalleryDetailPage({
                 ))}
               </div>
 
-              <div className="mt-8 overflow-hidden rounded-[1.5rem] bg-[#052d21]">
+              <div className="mt-8 overflow-hidden rounded-[1.5rem] bg-[#003f5f]">
                 <div className="relative aspect-[16/10] sm:aspect-[16/7]">
                   <Image
                     src={item.image}
@@ -170,7 +170,7 @@ export default async function GalleryDetailPage({
               </div>
             </article>
 
-            <aside className="rounded-[1.5rem] border border-emerald-100 bg-[#fbfdfb] p-6 shadow-xl shadow-emerald-950/5">
+            <aside className="rounded-[1.5rem] border border-primary/10 bg-[#fbfdfb] p-6 shadow-xl shadow-primary/5">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                 <Sparkles className="h-5 w-5" />
               </div>

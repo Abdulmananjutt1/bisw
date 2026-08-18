@@ -12,9 +12,9 @@ const heroStats = [
 
 export function AboutHero() {
   return (
-    <section id="about" className="relative isolate flex min-h-[430px] scroll-mt-24 overflow-hidden bg-[#063f30] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
+    <section id="about" className="relative isolate flex min-h-[430px] scroll-mt-24 overflow-hidden bg-[#004370] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
       <div className="absolute inset-0 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxqQotmqhl9iZBaJe-PN5xT8Q8G2pCKArZu0IJKny9PkggW9Q0dkL5c809&s=10')] bg-cover bg-center opacity-35" />
-      <div className="absolute inset-0 bg-[#052d21]/75" />
+      <div className="absolute inset-0 bg-[#003357]/55" />
 
       <Container className="relative flex h-full flex-col justify-center text-center drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)]">
         <p className="mx-auto mb-3 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-secondary-light">

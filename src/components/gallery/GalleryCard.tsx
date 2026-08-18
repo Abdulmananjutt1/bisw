@@ -26,7 +26,7 @@ export function GalleryCard({
         className
       )}
     >
-      <article className="relative h-full overflow-hidden rounded-[1.5rem] bg-foreground shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:shadow-2xl group-hover:shadow-emerald-950/15">
+      <article className="relative h-full overflow-hidden rounded-[1.5rem] bg-foreground shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:shadow-2xl group-hover:shadow-primary/15">
         <div className={cn("relative", featured ? "aspect-[16/8]" : "aspect-[4/5]")}>
           <Image
             src={item.image}
@@ -41,7 +41,7 @@ export function GalleryCard({
             priority={priority}
             unoptimized
           />
-          <div className="absolute inset-0 bg-[#052d21]/62" />
+          <div className="absolute inset-0 bg-[#003f5f]/55" />
           <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
             <div className="flex items-center justify-between gap-4">
               <span className="inline-flex rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-white">

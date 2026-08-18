@@ -42,7 +42,7 @@ export function ProgramsPreview() {
         </div>
 
         <div className="mt-12 grid gap-5 lg:grid-cols-[0.82fr_1.18fr]">
-          <article className="flex min-h-[520px] flex-col justify-between overflow-hidden rounded-[1.75rem] bg-primary-darker p-7 text-white shadow-xl shadow-emerald-950/15 sm:p-8">
+          <article className="flex min-h-[520px] flex-col justify-between overflow-hidden rounded-[1.75rem] bg-primary-darker p-7 text-white shadow-xl shadow-primary/15 sm:p-8">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-primary-lighter/80">
                 Complete care model
@@ -85,7 +85,7 @@ export function ProgramsPreview() {
               return (
                 <article
                   key={program.id}
-                  className="group relative min-h-[220px] overflow-hidden rounded-[1.5rem] border border-emerald-100 bg-white p-5 shadow-sm shadow-emerald-950/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-xl hover:shadow-emerald-950/10"
+                  className="group relative min-h-[220px] overflow-hidden rounded-[1.5rem] border border-primary/10 bg-white p-5 shadow-sm shadow-primary/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-xl hover:shadow-primary/10"
                 >
                   <span className="pointer-events-none absolute right-4 top-4 rounded-2xl bg-emerald-50 px-3 py-1 text-4xl font-black leading-none text-primary/15 transition-colors group-hover:text-primary/28">
                     {String(i + 1).padStart(2, "0")}

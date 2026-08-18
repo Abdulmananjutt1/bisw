@@ -142,7 +142,7 @@ export default function ProgramsPage() {
           className="object-cover object-center opacity-75"
           unoptimized
         />
-        <div className="absolute inset-0 bg-[#07120f]/72" />
+        <div className="absolute inset-0 bg-[#003f5f]/50" />
 
         <Container className="relative flex h-full flex-col justify-center text-center">
           <h1 className="mt-5 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">

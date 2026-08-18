@@ -33,9 +33,9 @@ export default function GalleryPage() {
 
   return (
     <>
-      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#063f30] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
+      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#004370] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=85')] bg-cover bg-center opacity-30" />
-        <div className="absolute inset-0 bg-[#052d21]/75" />
+        <div className="absolute inset-0 bg-[#003357]/55" />
         <div className="absolute -right-10 -top-10 h-72 w-72 rounded-full border-[30px] border-white/5" />
         <Container className="relative flex h-full items-center">
           <div className="max-w-2xl">

@@ -59,9 +59,9 @@ const givingSteps = [
 export default function DonatePage() {
   return (
     <>
-      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#063f30] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
+      <section className="relative isolate flex min-h-[430px] overflow-hidden bg-[#004370] py-12 sm:h-[500px] sm:min-h-0 sm:py-0">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=85')] bg-cover bg-center opacity-30" />
-        <div className="absolute inset-0 bg-[#052d21]/75" />
+        <div className="absolute inset-0 bg-[#003357]/55" />
         <Container className="relative flex h-full items-center">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-primary-light backdrop-blur-sm">
@@ -128,7 +128,7 @@ export default function DonatePage() {
         </Container>
       </section>
 
-      <section className="bg-[#063f30] py-16 sm:py-20">
+      <section className="bg-[#004370] py-16 sm:py-20">
         <Container>
           <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
             <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary-light">Donate directly</p><h2 className="mt-3 text-3xl font-bold tracking-tight text-white">Bank transfer details</h2><p className="mt-3 max-w-lg leading-relaxed text-white/65">For Zakat, Sadaqah, or general donation, transfer directly to BIWS and share your receipt with our team for acknowledgement.</p></div>
