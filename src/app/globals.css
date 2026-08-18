@@ -132,8 +132,10 @@ button,
   50%       { opacity: 0.85; transform: scale(1.04); }
 }
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25%      { transform: translateY(-8px) translateX(4px); }
+  50%      { transform: translateY(-12px) translateX(-4px); }
+  75%      { transform: translateY(-6px) translateX(2px); }
 }
 @keyframes spinSlow {
   from { transform: rotate(0deg); }
@@ -154,6 +156,10 @@ button,
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+@keyframes shine {
+  0%   { transform: translateX(-100%) rotate(12deg); }
+  100% { transform: translateX(400%) rotate(12deg); }
 }
 
 .animate-fade-in        { animation: fadeIn 0.6s ease-out forwards; }
@@ -197,11 +203,15 @@ button,
 
 /* ─── Pattern BG ─── */
 .pattern-dots {
-  background-image: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 .pattern-grid {
-  background-image: none;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 /* ─── Hero shape ─── */

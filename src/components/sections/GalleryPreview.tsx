@@ -22,8 +22,27 @@ export function GalleryPreview() {
 
   return (
     <section className="relative overflow-hidden bg-primary-darker py-16 sm:py-24">
-      {/* Background pattern */}
-      <div className="absolute inset-0 pattern-dots opacity-20" />
+      {/* Enhanced Background Only */}
+      <div className="absolute inset-0">
+        {/* Large gradient blobs */}
+        <div className="absolute -left-40 -top-40 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/30 to-primary-light/20 blur-[120px]" />
+        <div className="absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-secondary/20 to-secondary-light/15 blur-[100px]" />
+        <div className="absolute bottom-0 left-1/3 h-[450px] w-[450px] rounded-full bg-gradient-to-br from-primary-light/20 to-primary/15 blur-[90px]" />
+        
+        {/* Subtle diagonal stripes */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 80px)',
+        }} />
+        
+        {/* Dot pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }} />
+        
+        {/* Gradient lines */}
+        <div className="absolute right-0 bottom-1/3 h-[1px] w-2/3 bg-gradient-to-l from-transparent via-secondary/25 to-transparent" />
+      </div>
 
       <Container className="relative">
         {/* Header */}
