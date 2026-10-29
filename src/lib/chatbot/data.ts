@@ -286,7 +286,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       "payment details",
     ],
     response: {
-      text: "**Bank Transfer Details**\n\n**Bank:** Faysal Bank Limited\n**Account Name:** Begum Inayat Welfare Society of Pakistan\n**Account No:** 0130006000000316\n**IBAN:** PK94FAYS0130006D00000316\n**Branch:** Nw Garden Town, Lahore (0130)\n\nAfter transfer, please share your payment screenshot with the BIWS team.",
+      text: "**Bank Transfer Details**\n\n**Bank:** Faysal Bank Limited\n**Account Name:** Begum Inayat Welfare Society of Pakistan\n**Account No:** 0130006000000316\n**IBAN:** PK94FAYS013000600000316\n**Branch:** Nw Garden Town, Lahore (0130)\n\nAfter transfer, please share your payment screenshot with the BIWS team.",
       quickReplies: donateReplies,
     },
   },
