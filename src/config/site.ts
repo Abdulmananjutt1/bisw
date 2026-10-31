@@ -26,7 +26,7 @@ export const siteConfig = {
     accountName: "Begum Inayat Welfare Society of Pakistan",
     branch: "",
     accountNo: "0130006000000316",
-    iban: "PK94FAYS013000600000316",
+    iban: "PK94FAYS0130006000000316",
   },
   social: {
     facebook: "https://www.facebook.com/biwsorphanage",
